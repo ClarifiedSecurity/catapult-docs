@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+site_name: Catapult Docs
+theme:
+  name: material
+#  logo: assets/logo-white.png
+#  favicon: assets/logo.png
+  highlightjs: true
+  palette:
+
+    # Palette toggle for light mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+plugins:
+  - search

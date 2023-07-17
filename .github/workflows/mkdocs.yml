@@ -1,0 +1,84 @@
+name: Deploy Docs to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # Allows triggering this workflow from another repository
+  repository_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        with:
+          repository: "ClarifiedSecurity/Catapult"
+          path: "catapult"
+          token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
+      - uses: actions/checkout@v3
+        with:
+          repository: "ClarifiedSecurity/Catapult-Customizer"
+          path: "catapult-customizer"
+          token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
+      - uses: actions/checkout@v3
+        with:
+          repository: "ClarifiedSecurity/cs.core"
+          path: "cs-core"
+          token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
+      - run: ls -lah && pwd
+      - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult/ docs/catapult/
+      - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult-customizer/ docs/catapult-customizer/
+      - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' cs-core/ docs/cs-core/
+      - run: rm -rf catapult catapult-customizer cs-core
+      - run: |
+          git config --global user.name "CatapultBot"
+          git config --global user.email "catapult@clarifiedsecurity.com"
+          git add docs
+          git status
+          git diff --quiet && git diff --staged --quiet || git commit -m "CatapultBot update docs"
+          git push -o ci.skip
+          git status
+
+### TODO add check if no changes - git diff --quiet && git diff --staged --quiet || git commit -m "CatapultBot update docs"
+
+### mk docs job, will use it later
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v3
+#      - uses: actions/setup-python@v4
+#        with:
+#          python-version: 3.x
+#      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+#      - uses: actions/cache@v3
+#        with:
+#          key: mkdocs-material-${{ env.cache_id }}
+#          path: .cache
+#          restore-keys: |
+#            mkdocs-material-
+#      - run: pip install mkdocs-material
+#      - run: mkdocs gh-deploy --force
+#
