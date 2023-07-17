@@ -49,6 +49,9 @@ jobs:
           path: "cs-core"
           token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
       - run: ls -lah && pwd
+      - run: mkdir -p docs/catapult
+      - run: mkdir -p docs/catapult-customizer
+      - run: mkdir -p docs/cs-core
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult/ docs/catapult/
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult-customizer/ docs/catapult-customizer/
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' cs-core/ docs/cs-core/
