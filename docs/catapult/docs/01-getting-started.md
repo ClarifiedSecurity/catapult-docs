@@ -11,7 +11,7 @@ Catapult can run in `Linux`, `Windows (WSL)` or `MacOS`. Recommended host OS is 
   sudo apt install git make -y
   ```
 
-- GOTO [Universal getting started](https://github.com/ClarifiedSecurity/Catapult#universal-getting-started)
+- GOTO [Universal getting started](#universal-getting-started)
 
 ## Windows WSL
 
@@ -34,7 +34,7 @@ wsl --install
   ```
 
 - Make sure all of the SSH keypairs you need are in `~/.ssh` folder in the WSL Ubuntu and ssh-agent is started. For easy-to-use SSH Agent you can follow this [guide](https://esc.sh/blog/ssh-agent-windows10-wsl2/). You can use this method to add multiple keys to the SSH Agent.
-- GOTO [Universal getting started](https://github.com/ClarifiedSecurity/Catapult#universal-getting-started)
+- GOTO [Universal getting started](#universal-getting-started)
 
 **On Windows we suggest using [VSCode](https://code.visualstudio.com/) with the [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extension to edit the files in WSL and [Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/install) for connection to the WSL.**
 
