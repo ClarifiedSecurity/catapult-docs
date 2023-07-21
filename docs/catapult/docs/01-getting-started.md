@@ -13,9 +13,19 @@ Catapult can run in `Linux`, `Windows (WSL)` or `MacOS`. Recommended host OS is 
 
 - GOTO [Universal getting started](#universal-getting-started)
 
+## Linux (Arch)
+
+- Make sure you have `git` & `make` installed:
+
+  ```sh
+  sudo pacman -S git make
+  ```
+
+- GOTO [Universal getting started](#universal-getting-started)
+
 ## Windows WSL
 
-You can run Catapult in WSL on Windows 10/11 but if you are unfamiliar with WSL and it's nuances then it might be easier to install Ubuntu 22.04 LTS on a VM and use that as your host OS. If you want to use WSL then follow the instructions below
+You can run Catapult in WSL on Windows 10/11 just follow the instructions below
 
 From an admin PowerShell run:
 
@@ -54,8 +64,8 @@ wsl --install
 - Clone the project from GitHub with:
 
   ```sh
-  git clone https://github.com/ClarifiedSecurity/Catapult
-  cd Catapult
+  git clone https://github.com/ClarifiedSecurity/catapult
+  cd catapult
   ```
 
 - Create your own variables file based on the example:

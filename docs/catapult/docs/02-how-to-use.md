@@ -60,7 +60,7 @@ ctp-deploy-role <inventory_hostname> -e single_role=<role> # Looks for role unde
 ctp-deploy-role <inventory_hostname> -e single_role=<role.fqcn> # Looks for role with the fully qualified role name (FQCN) in the installed collections and only runs that and stops
 ```
 
-This is a useful during role developing and or when you want to minimize the time it takes to configure something. For an example only reconfiguring the user accounts of the machine by using single_role with `cs.core.accounts` role.
+This is a useful during role developing and or when you want to minimize the time it takes to configure something. For an example only reconfiguring the user accounts of the machine by using single_role with `clarified.core.accounts` role.
 
 `ctp-deploy-network` - Runs ctp-deploy and also includes networks configuration role
 
@@ -192,7 +192,7 @@ ctp-reset <inventory_hostname> # Resets the VM for the given inventory_hostname
 
 ## MISC commands
 
-`ctp-update-os` - Runs only the cs.core.updates role on the given targets. Useful for only updating the OS packages.
+`ctp-update-os` - Runs only the clarified.core.updates role on the given targets. Useful for only updating the OS packages.
 
 _Example usage:_
 
