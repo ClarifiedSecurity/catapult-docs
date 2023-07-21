@@ -35,27 +35,27 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/checkout@v3
         with:
-          repository: "ClarifiedSecurity/Catapult"
+          repository: "ClarifiedSecurity/catapult"
           path: "catapult"
           token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
       - uses: actions/checkout@v3
         with:
-          repository: "ClarifiedSecurity/Catapult-Customizer"
+          repository: "ClarifiedSecurity/catapult-customizer"
           path: "catapult-customizer"
           token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
       - uses: actions/checkout@v3
         with:
-          repository: "ClarifiedSecurity/cs.core"
-          path: "cs-core"
+          repository: "ClarifiedSecurity/clarified.core"
+          path: "clarified-core"
           token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
       - run: ls -lah && pwd
       - run: mkdir -p docs/catapult
       - run: mkdir -p docs/catapult-customizer
-      - run: mkdir -p docs/cs-core
+      - run: mkdir -p docs/clarified-core
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult/ docs/catapult/
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult-customizer/ docs/catapult-customizer/
-      - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' cs-core/ docs/cs-core/
-      - run: rm -rf catapult catapult-customizer cs-core
+      - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' clarified-core/ docs/clarified-core/
+      - run: rm -rf catapult catapult-customizer clarified-core
       - run: |
           git config --global user.name "CatapultBot"
           git config --global user.email "catapult@clarifiedsecurity.com"
