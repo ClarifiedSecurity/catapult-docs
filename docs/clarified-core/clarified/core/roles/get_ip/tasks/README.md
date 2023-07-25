@@ -1,37 +1,40 @@
-# Role Name
+# get_ip
 
-COMING SOON
-A brief description of the role goes here.
+This role will look up the IP addresses (IPv4 & IPv6) and FQDN of an Ansible inventory host and print them out.
 
 ## Requirements
 
-COMING SOON
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None
 
 ## Role Variables
 
-COMING SOON
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+None
 
 ## Dependencies
 
-COMING SOON
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None
 
-## Example Playbook
+## Example
 
-COMING SOON
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+```yaml
+# Include the role
+- name: Get IP address of host
+  ansible.builtin.include_role:
+    name: clarified.core.get_ip
+```
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```yaml
+# Include the role in meta
+---
+- dependencies:
+    - role: clarified.core.get_ip
+```
+
+```shell
+# Use the alias in Catapult
+ctp-get-ip <inventory_hostname>
+```
 
 ## License
 
 AGPL-3.0-or-later
-
-## Author Information
-
-COMING SOON
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).

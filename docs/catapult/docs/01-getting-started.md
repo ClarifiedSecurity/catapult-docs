@@ -4,58 +4,49 @@ Catapult can run in `Linux`, `Windows (WSL)` or `MacOS`. Recommended host OS is 
 
 ## Linux (Ubuntu/Debian)
 
-- Make sure you have `git` & `make` installed:
-
-  ```sh
-  sudo apt update && \
-  sudo apt install git make -y
-  ```
+```sh
+sudo apt update && \
+sudo apt install git make -y
+```
 
 - GOTO [Universal getting started](#universal-getting-started)
 
 ## Linux (Arch)
 
-- Make sure you have `git` & `make` installed:
-
-  ```sh
-  sudo pacman -S git make
-  ```
+```sh
+sudo pacman -S git make
+```
 
 - GOTO [Universal getting started](#universal-getting-started)
 
-## Windows WSL
-
-You can run Catapult in WSL on Windows 10/11 just follow the instructions below
+## Windows (Windows Subsystem for Linux)
 
 From an admin PowerShell run:
-
-- Install WSL & Ubuntu 22.04 LTS with:
 
 ```powershell
 wsl --install
 ```
 
-- Restart Windows, after restart Ubuntu setup should automatically run the, if not run Ubuntu it manually from the start menu and finalize the setup.
-- Make sure you have `git` & `make` installed:
+- Restart Windows
+- After restart Ubuntu setup should automatically run, if no then run Ubuntu manually from the start menu and finalize the setup.
+- From Ubuntu terminal run:
 
   ```sh
   sudo apt update && \
   sudo apt install git make keychain -y
   ```
 
-- Make sure all of the SSH keypairs you need are in `~/.ssh` folder in the WSL Ubuntu and ssh-agent is started. For easy-to-use SSH Agent you can follow this [guide](https://esc.sh/blog/ssh-agent-windows10-wsl2/). You can use this method to add multiple keys to the SSH Agent.
+- Make sure all needed SSH keypairs are in `~/.ssh` folder in the WSL Ubuntu and ssh-agent is started. For easy-to-use SSH Agent you can follow this [guide](https://esc.sh/blog/ssh-agent-windows10-wsl2/). You can use this method to add multiple keys to the SSH Agent.
 - GOTO [Universal getting started](#universal-getting-started)
 
-**On Windows we suggest using [VSCode](https://code.visualstudio.com/) with the [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extension to edit the files in WSL and [Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/install) for connection to the WSL.**
+**PS - On Windows we suggest using [VSCode](https://code.visualstudio.com/) with the [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extension to edit the files in WSL and [Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/install) for easy connection to WSL.**
 
 ## MacOS
 
-- Make sure you have brew and make installed:
-
-  ```sh
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew install make
-  ```
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install make
+```
 
 ## Universal getting started
 
@@ -92,3 +83,7 @@ wsl --install
   ```sh
   make shell
   ```
+
+## NB
+
+If you are using a Linux VM with a user ID that is not 1000 (you can check it with the `id` command) you need to build the Catapult Docker image yourself with the `make build` command.
