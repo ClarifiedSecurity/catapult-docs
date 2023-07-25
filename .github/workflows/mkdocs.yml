@@ -54,8 +54,8 @@ jobs:
       - run: mkdir -p docs/clarified-core
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult/ docs/catapult/
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult-customizer/ docs/catapult-customizer/
-      - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' clarified-core/clarified/core/roles/ docs/clarified-core/
-      - run: rm -rf catapult catapult-customizer clarified-core
+      - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' clarified-core/clarified/core/roles/ docs/clarified-core-collection/
+      - run: rm -rf catapult catapult-customizer clarified-core-collection
       - run: |
           git config --global user.name "CatapultBot"
           git config --global user.email "catapult@clarifiedsecurity.com"
