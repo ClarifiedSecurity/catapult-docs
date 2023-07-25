@@ -1,26 +1,37 @@
-# Ansible Collection - clarified.core
+# Role Name
 
-## TLDR
+COMING SOON
+A brief description of the role goes here.
 
-This is an Ansible collection consisting of some roles and a an inventory plugin for [Providentia](https://github.com/ClarifiedSecurity/Providentia) maintained by Clarified Security. It is a core part of [Catapult](https://github.com/ClarifiedSecurity/Catapult) but can be used independently.
+## Requirements
 
-For each role under the `cs/core/roles` folder the name should be self explanatory. To use the role include it with `dependencies` or `include_role` task, using the format `clarified.core.name_of_the_role`
+COMING SOON
+Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
-Each role contains a README.md file with more information about the role. Refer to the role defaults to see what variables are available.
+## Role Variables
 
-## Examples
+COMING SOON
+A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
-Including role from `vm/"name"/tasks/main.yml` This includes the clarified.core.get_ip role using the `ansible.builtin.include_role` task.
+## Dependencies
 
-```yml
-- name: Getting the machine IP...
-  include_role:
-    name: clarified.core.get_ip
-```
+COMING SOON
+A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
-Including role from `vm/"name"/meta/main.yml` This includes the clarified.core.get_ip with meta.
+## Example Playbook
 
-```yml
-dependencies:
-  - role: clarified.core.get_ip
-```
+COMING SOON
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+
+    - hosts: servers
+      roles:
+         - { role: username.rolename, x: 42 }
+
+## License
+
+AGPL-3.0-or-later
+
+## Author Information
+
+COMING SOON
+An optional section for the role authors to include contact information, or a website (HTML is not allowed).
