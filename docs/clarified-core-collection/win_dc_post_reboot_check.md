@@ -14,7 +14,7 @@ None
 
 None
 
-## Example Playbook
+## Example
 
 ```yaml
 # Include the role in tasks

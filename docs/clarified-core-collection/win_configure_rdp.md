@@ -14,7 +14,7 @@ Check the `defaults/main.yml` file for the full list of variables.
 
 None
 
-## Example Playbook
+## Example
 
 ```yaml
 # Include the role in tasks
