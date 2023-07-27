@@ -52,7 +52,7 @@ jobs:
       - run: mkdir -p docs/catapult
       - run: mkdir -p docs/catapult-customizer
       - run: mkdir -p docs/clarified-core
-      - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult/ docs/catapult/
+      - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult/docs/ docs/catapult/
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult-customizer/ docs/catapult-customizer/
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' clarified-core/clarified/core/roles/ docs/clarified-core-collection/
       - run: find docs/clarified-core-collection/ -type f -iname "*.md" -exec sh -c 'dir=$(dirname "$1"); parent=$(dirname "$dir"); base=$(basename "$dir"); mv "$1" "$parent/$base.md" ' sh {} \;
@@ -67,7 +67,7 @@ jobs:
           git push -o ci.skip
           git status
 
-### mk docs job
+  ### mk docs job
   docs:
     runs-on: ubuntu-latest
     steps:
@@ -84,4 +84,3 @@ jobs:
             mkdocs-material-
       - run: pip install mkdocs-material
       - run: mkdocs gh-deploy --force
-
