@@ -63,6 +63,7 @@ jobs:
       - run: find docs/clarified-core-collection/ -type f -iname "*.md" -exec sh -c 'dir=$(dirname "$1"); parent=$(dirname "$dir"); base=$(basename "$dir"); mv "$1" "$parent/$base.md" ' sh {} \;
       - run: find docs/clarified-core-collection/ -type d -depth -empty -exec rmdir {} \;
       - run: rm -rf catapult catapult-customizer clarified-core
+      - run: mkdir docs/citest && echo "This is a test file" > docs/citest/test.md
       - run: |
           git config --global user.name "CatapultBot"
           git config --global user.email "catapult@clarifiedsecurity.com"
@@ -82,6 +83,9 @@ jobs:
         with:
           fetch-depth: 1
           ref: ''
+      - run: git show-ref
+      - run: git pull
+      - run: git show-ref
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
@@ -92,6 +96,5 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: git show-ref
       - run: pip install mkdocs-material
       - run: mkdocs gh-deploy --force
