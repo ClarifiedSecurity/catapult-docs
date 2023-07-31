@@ -6,6 +6,8 @@ theme:
 #  logo: assets/logo-white.png
 #  favicon: assets/logo.png
   highlightjs: true
+  features:
+    - content.code.copy
   palette:
 
     # Palette toggle for light mode
