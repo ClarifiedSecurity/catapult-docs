@@ -33,18 +33,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
       - uses: actions/checkout@v3
         with:
+          fetch-depth: 1
           repository: "ClarifiedSecurity/catapult"
           path: "catapult"
           token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
       - uses: actions/checkout@v3
         with:
+          fetch-depth: 1
           repository: "ClarifiedSecurity/catapult-customizer"
           path: "catapult-customizer"
           token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
       - uses: actions/checkout@v3
         with:
+          fetch-depth: 1
           repository: "ClarifiedSecurity/clarified.core"
           path: "clarified-core"
           token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
@@ -72,6 +77,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+          ref: ${{ github.ref }}
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
