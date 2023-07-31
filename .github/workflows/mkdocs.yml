@@ -63,7 +63,7 @@ jobs:
       - run: find docs/clarified-core-collection/ -type f -iname "*.md" -exec sh -c 'dir=$(dirname "$1"); parent=$(dirname "$dir"); base=$(basename "$dir"); mv "$1" "$parent/$base.md" ' sh {} \;
       - run: find docs/clarified-core-collection/ -type d -depth -empty -exec rmdir {} \;
       - run: rm -rf catapult catapult-customizer clarified-core
-      - run: mkdir docs/citest && echo "This is a test file 11" > docs/citest/test.md
+      - run: echo "This is a test file 11" > docs/citest/test.md
       - run: |
           git config --global user.name "CatapultBot"
           git config --global user.email "catapult@clarifiedsecurity.com"
