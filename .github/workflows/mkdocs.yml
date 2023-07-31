@@ -62,15 +62,17 @@ jobs:
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' clarified-core/clarified/core/roles/ docs/clarified-core-collection/
       - run: find docs/clarified-core-collection/ -type f -iname "*.md" -exec sh -c 'dir=$(dirname "$1"); parent=$(dirname "$dir"); base=$(basename "$dir"); mv "$1" "$parent/$base.md" ' sh {} \;
       - run: find docs/clarified-core-collection/ -type d -depth -empty -exec rmdir {} \;
-      - run: rm -rf catapult catapult-customizer clarified-core-collection
+      - run: rm -rf catapult catapult-customizer clarified-core
       - run: |
           git config --global user.name "CatapultBot"
           git config --global user.email "catapult@clarifiedsecurity.com"
+          git show-ref
           git add docs
           git status
           git diff --quiet && git diff --staged --quiet || git commit -m "CatapultBot update docs"
           git push -o ci.skip
           git status
+          git show-ref
 
   ### mk docs job
   docs:
@@ -90,5 +92,6 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
+      - run: git show-ref
       - run: pip install mkdocs-material
       - run: mkdocs gh-deploy --force
