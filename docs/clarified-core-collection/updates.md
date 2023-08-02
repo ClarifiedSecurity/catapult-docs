@@ -1,6 +1,8 @@
 # updates
 
-This role is used to updated the operating system packages. Currently supported operating systems are: Ubuntu/Debian, Windows & Arch Linux.
+This role is used to update the operating system packages. Currently supported operating systems are: Ubuntu/Debian, Windows & Arch Linux.
+
+Debian family operating systems can be configured to run unattended updates, with additional option to allow unattended reboots if required.
 
 ## Requirements
 
