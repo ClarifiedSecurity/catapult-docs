@@ -1,37 +1,53 @@
-# Role Name
+# configure_networking
 
-COMING SOON
-A brief description of the role goes here.
+This is a role to configure networking for a VM after cloning. Currently it is only supporting network configuration for VMs deployed on VMware vSphere, but the scripts are more or less universal and can be modified to add support to different hypervisors. [Here](https://github.com/ClarifiedSecurity/clarified.core/tree/AWK-CORE/clarified/core/roles/configure_networking/tasks/vsphere) is a list of all supported network methods.
 
 ## Requirements
 
-COMING SOON
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None
 
 ## Role Variables
 
-COMING SOON
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+The variable structure is based on [Providentia](https://github.com/ClarifiedSecurity/Providentia) API output. When using file based inventory then make sure to follow the same structure. Check the example blow for more details.
 
 ## Dependencies
 
-COMING SOON
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None
 
-## Example Playbook
+## Example
 
-COMING SOON
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+When not using Providentia define the the network configuration in host/group/etc vars in the following format:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```yaml
+# Example on how to configure single network interface with static IPv4 and IPv6 addresses and an extra IPv6 address for management traffic
+# You can remove the addresses you don't need
+# Any undefined value leave to null to avoid errors
+interfaces:
+  - network_id: my-network-name # Some type of identifiable name. It'll be used for an example in netplan and nmcli interface name
+    cloud_id: my-cloud-name # This is a vSphere portgroup name
+    domain: my.domain.com
+    fqdn: my-host.my.domain.com # FQDN of the VM where the network will be configured
+    egress: true # Whether the network is used for egress traffic (connecting to the internet)
+    connection: true # Whether the network is used for management traffic (connecting over ssh)
+    addresses:
+      - pool_id: default-ipv4 # IP pool name
+        mode: ipv4_static # IP address mode leave as it is
+        connection: false # Whether this IP address is used for management traffic
+        address: 192.168.0.0/24 # IP address and subnet mask
+        dns_enabled: true # Whether this IP will be registered in DNS (Requires some type of DNS integration)
+        gateway: 192.168.0.1 # Gateway IP address
 
-## License
+      - pool_id: default-ipv6 # IP pool name
+        mode: ipv6_static # IP address mode leave as it is
+        connection: false # Whether this IP address is used for management traffic
+        address: 2001:0db8:85a3:0000:0000:8a2e:0370:7334/64 # IP address and prefix
+        dns_enabled: true # Whether this IP will be registered in DNS (Requires some type of DNS integration)
+        gateway: 2001:0db8:85a3:0000:0000:8a2e:0370:7331 # Gateway IP address
 
-AGPL-3.0-or-later
-
-## Author Information
-
-COMING SOON
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+      - pool_id: mgmt-ipv6 # IP pool name make sure it contains mgmt
+        mode: ipv6_static # IP address mode leave as it is
+        connection: true # Whether this IP address is used for management traffic
+        address: fd00:1234:5678:abcd::1234/64 # IP address and prefix
+        dns_enabled: false # Whether this IP will be registered in DNS (Requires some type of DNS integration)
+        gateway: null # Gateway IP address
+```
