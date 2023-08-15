@@ -64,28 +64,27 @@ brew install git make jq curl
 
 ## Install
 
-- Make sure you have a working [KeePass](https://keepassxc.org/) database with a key file. Catapult will not work without the KeePass key file so make sure your database is configured to use one.
-- Make sure all of the SSH keypairs you need are loaded ssh-agent, because Catapult will use them to connect to the VMs.
+- Make sure all of the SSH keypairs you need are loaded into your ssh-agent. Catapult will use them to connect to the VMs.
 - Clone the project from GitHub with:
 
 ```sh
-git clone https://github.com/ClarifiedSecurity/catapult
+git clone https://github.com/ClarifiedSecurity/catapult --depth 1
 cd catapult
 ```
 
-- Create your own variables file based on the example but don't delete the example:
+- Create your own variables file based on the example but don't delete the example file:
 
 ```sh
 cp .makerc-vars.example .makerc-vars
 ```
-
-- Fill out all of the required vars in `.makerc-vars`, To avoid any syntax errors don't leave a space after the `:=` sign. **Read the comments for each variable for more information.** All of the `KEEPASS_*` variables are case sensitive.
 
 - Install all of the required dependencies for your host with:
 
 ```sh
 make prepare
 ```
+
+- If you didn't configure Keepass automatically during `make prepare` then fill out missing vars in `.makerc-vars`. **Read the comments for each variable for more information.** All of the `KEEPASS_*` variables are case sensitive.
 
 - Start the Catapult container and connect to it with:
 
