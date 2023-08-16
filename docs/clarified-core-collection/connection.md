@@ -1,37 +1,30 @@
-# Role Name
+# connection
 
-COMING SOON
-A brief description of the role goes here.
+This role is used to set connection parameters for the VM after cloning. It parses the correct parameters based on if the VM was just cloned or if it is already been customized. This role can also be used to connect to an already exiting virtual or physical machine. All of the connections are made over SSH.
 
 ## Requirements
 
-COMING SOON
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Credentials for the VM to connect to. This can be either a username and password or a username and SSH key. The VM must also be configured to allow SSH connections.
 
 ## Role Variables
 
-COMING SOON
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+`template_username` - The username to connect the freshly cloned machine to run post-configuration there. Usually root or Administrator.
+`template_password` - The password to connect the freshly cloned machine to run post-configuration there. Usually root or Administrator.
+`connection_address` - The IP address of the machine to connect to.
+
+`ansible_deployer_username` - The username to connect to the machine with once the post-configuration is complete. Usually something that gets created in the `clarified.core.accounts` role.
+`ansible_deployer_password` - The password to connect to the machine with once the post-configuration is complete. Usually something that gets created in the `clarified.core.accounts` role.
 
 ## Dependencies
 
-COMING SOON
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+none
 
-## Example Playbook
+## Example
 
-COMING SOON
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Since this role already gets included in `start.yml` there is no need to include it in your playbook. However, if you want to run it separately, you can do so with:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
-## License
-
-AGPL-3.0-or-later
-
-## Author Information
-
-COMING SOON
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+```yaml
+- name: Including connection role
+  include_role:
+    name: clarified.core.connection
+```
