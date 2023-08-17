@@ -1,10 +1,18 @@
 # join_domain
 
-This is a role for adding Windows and Linux hosts to Active Directory (AD) domains.
+This is a role for:
+
+- Adding Windows and Linux hosts to Active Directory (AD) domains.
+- Fixing broken AD domain joins and re-joining machines to domain.
 
 ## Requirements
 
-A variable called `domain` or `ad_domain_name` (if the DNS domain name does not match the AD domain name) must be defined pointing to the AD domain name.
+Following variables are required:
+
+- `domain` - Points to the AD domain name that matches your environments DNS domain.
+- `ad_domain_name` - Points to the AD domain name if it does **NOT** match your environments DNS domain.
+- `domain_admin_username` - Username of an account that has privileges to join computers to the domain and create/delete computer objects.
+- `domain_admin_password` - Password of the domain_admin_username.
 
 ## Role Variables
 
