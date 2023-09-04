@@ -38,7 +38,7 @@ Alternatively the whole `nexus_ldap_configuration` block can be defined as a sin
 
 ## Dependencies
 
-- Dependes on Docker and Docker Compose being installed on the host. Docker can be installed using the [clarified.core.docker](https://github.com/ClarifiedSecurity/clarified.core/tree/main/clarified/core/roles/docker) role.
+- Depends on Docker and Docker Compose being installed on the host. Docker can be installed using the [clarified.core.docker](https://github.com/ClarifiedSecurity/clarified.core/tree/main/clarified/core/roles/docker) role.
 
 ## Example
 
