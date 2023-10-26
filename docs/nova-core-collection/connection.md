@@ -12,8 +12,8 @@ Credentials for the VM to connect to. This can be either a username and password
 `template_password` - The password to connect the freshly cloned machine to run post-configuration there. Usually root or Administrator.
 `connection_address` - The IP address of the machine to connect to.
 
-`ansible_deployer_username` - The username to connect to the machine with once the post-configuration is complete. Usually something that gets created in the `clarified.core.accounts` role.
-`ansible_deployer_password` - The password to connect to the machine with once the post-configuration is complete. Usually something that gets created in the `clarified.core.accounts` role.
+`ansible_deployer_username` - The username to connect to the machine with once the post-configuration is complete. Usually something that gets created in the `nova.core.accounts` role.
+`ansible_deployer_password` - The password to connect to the machine with once the post-configuration is complete. Usually something that gets created in the `nova.core.accounts` role.
 
 ## Dependencies
 
@@ -26,5 +26,5 @@ Since this role already gets included in `start.yml` there is no need to include
 ```yaml
 - name: Including connection role
   include_role:
-    name: clarified.core.connection
+    name: nova.core.connection
 ```

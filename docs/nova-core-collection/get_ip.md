@@ -20,14 +20,14 @@ None
 # Include the role
 - name: Get IP address of host
   ansible.builtin.include_role:
-    name: clarified.core.get_ip
+    name: nova.core.get_ip
 ```
 
 ```yaml
 # Include the role in meta
 ---
 - dependencies:
-    - role: clarified.core.get_ip
+    - role: nova.core.get_ip
 ```
 
 ```shell

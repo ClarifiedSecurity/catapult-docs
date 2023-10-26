@@ -8,7 +8,7 @@ The certificates must be in PEM (base64 encoded) format. The role will convert t
 
 ## Role Variables
 
-Refer to [defaults/main.yml](https://github.com/ClarifiedSecurity/clarified.core/blob/main/clarified/core/roles/trusted_certificates/defaults/main.yml) for the full list of variables.
+Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/trusted_certificates/defaults/main.yml) for the full list of variables.
 
 ## Dependencies
 
@@ -20,7 +20,7 @@ none
 # This example will install the RootCA certificate from the url http://example.com/pem and the SecondRootCA certificate from the local file SecondRootCA.cer. The certificates will also be added to the Java truststore.
 - name: Including trusted_certificates role...
   ansible.builtin.include_role:
-    name: clarified.core.trusted_certificates
+    name: nova.core.trusted_certificates
   vars:
     jks_truststore_name: true
     trusted_certificates_list:

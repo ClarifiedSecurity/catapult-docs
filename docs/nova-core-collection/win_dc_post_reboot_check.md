@@ -20,12 +20,12 @@ None
 # Include the role in tasks
 - name: Name of the task
   ansible.builtin.include_role:
-    name: clarified.core.win_dc_post_reboot_check
+    name: nova.core.win_dc_post_reboot_check
 ```
 
 ```yaml
 # Include the role in meta
 ---
 - dependencies:
-    - role: clarified.core.win_dc_post_reboot_check
+    - role: nova.core.win_dc_post_reboot_check
 ```

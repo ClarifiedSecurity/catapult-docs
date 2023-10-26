@@ -26,7 +26,7 @@ ctp-rename-vm <inventory_hostname> -e new_vm_name=<new_vm_name>
 ```yaml
 - name: Name of the task
   ansible.builtin.include_role:
-    name: clarified.core.rename_vm
+    name: nova.core.rename_vm
   vars:
     new_vm_name: <new_vm_name> # Can use variable from group vars to template the new name format for bulk rename
 ```

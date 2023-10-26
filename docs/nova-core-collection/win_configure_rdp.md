@@ -20,12 +20,12 @@ None
 # Include the role in tasks
 - name: Name of the task
   ansible.builtin.include_role:
-    name: clarified.core.win_configure_rdp
+    name: nova.core.win_configure_rdp
 ```
 
 ```yaml
 # Include the role in meta
 ---
 - dependencies:
-    - role: clarified.core.win_configure_rdp
+    - role: nova.core.win_configure_rdp
 ```

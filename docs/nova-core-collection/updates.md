@@ -10,7 +10,7 @@ None
 
 ## Role Variables
 
-Refer to the [defaults/main.yml](https://github.com/ClarifiedSecurity/clarified.core/blob/main/clarified/core/roles/updates/defaults/main.yml) file for a list of variables and their default values.
+Refer to the [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/updates/defaults/main.yml) file for a list of variables and their default values.
 
 ## Dependencies
 
@@ -27,5 +27,5 @@ ctp-update-os <inventpry_hostname>
 # Use the role in a playbook.
 - name: Update the operating system
   ansible.builtin.include_role:
-    name: clarified.core.updates
+    name: nova.core.updates
 ```

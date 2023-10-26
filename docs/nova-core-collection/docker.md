@@ -8,7 +8,7 @@ none
 
 ## Role Variables
 
-Refer to the [defaults/main.yml](https://github.com/ClarifiedSecurity/clarified.core/blob/main/clarified/core/roles/docker/defaults/main.yml) file for a list of variables and their default values.
+Refer to the [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/docker/defaults/main.yml) file for a list of variables and their default values.
 
 ## Dependencies
 
@@ -19,5 +19,5 @@ none
 ```yaml
 - name: Including connection role
   include_role:
-    name: clarified.core.docker
+    name: nova.core.docker
 ```

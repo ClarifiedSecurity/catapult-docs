@@ -8,7 +8,7 @@ None
 
 ## Role Variables
 
-Refer to [defaults/main.yml](https://github.com/ClarifiedSecurity/clarified.core/blob/main/clarified/core/roles/os_configuration/defaults/main.yml) for the full list of variables.
+Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/os_configuration/defaults/main.yml) for the full list of variables.
 
 ## Dependencies
 
@@ -21,5 +21,5 @@ Since this role already gets included in `start.yml` there is no need to include
 ```yaml
 - name: Including os_configuration role
   include_role:
-    name: clarified.core.os_configuration
+    name: nova.core.os_configuration
 ```

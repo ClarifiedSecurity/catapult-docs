@@ -20,7 +20,7 @@ Required an Active Directory domain controller to be installed and available.
 
 One special variable not defined in defaults is `computer_ou`. This variable is used to specify the OU where the computer object should be created. If this variable is not defined, the computer object will be created in the default Computers container.
 
-Refer to the [defaults/main.yml](https://github.com/ClarifiedSecurity/clarified.core/blob/main/clarified/core/roles/join_domain/defaults/main.yml) file for a list of variables and their default values.
+Refer to the [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/join_domain/defaults/main.yml) file for a list of variables and their default values.
 
 ## Dependencies
 
@@ -31,18 +31,18 @@ none
 ```yaml
 - name: Joining domain
   ansible.builtin.include_role:
-    name: clarified.core.join_domain
+    name: nova.core.join_domain
 
 - name: Joining domain with custom values
   ansible.builtin.include_role:
-    name: clarified.core.join_domain
+    name: nova.core.join_domain
   vars:
     domain: example.com
     computer_ou: OU=Computers,DC=example,DC=com
 
 - name: Joining domain with custom values and credentials
   ansible.builtin.include_role:
-    name: clarified.core.join_domain
+    name: nova.core.join_domain
   vars:
     domain: example.com
     computer_ou: OU=Computers,DC=example,DC=com

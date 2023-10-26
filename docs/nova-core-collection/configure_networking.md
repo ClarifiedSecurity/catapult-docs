@@ -1,6 +1,6 @@
 # configure_networking
 
-This is a role to configure networking for a VM after cloning. Currently it is only supporting network configuration for VMs deployed on VMware vSphere, but the scripts are more or less universal and can be modified to add support to different hypervisors. [Here](https://github.com/ClarifiedSecurity/clarified.core/tree/AWK-CORE/clarified/core/roles/configure_networking/tasks/vsphere) is a list of all supported network methods.
+This is a role to configure networking for a VM after cloning. Currently it is only supporting network configuration for VMs deployed on VMware vSphere, but the scripts are more or less universal and can be modified to add support to different hypervisors. [Here](https://github.com/novateams/nova.core/tree/main/nova/core/roles/configure_networking/tasks/vsphere) is a list of all supported network methods.
 
 ## Requirements
 
@@ -9,6 +9,40 @@ None
 ## Role Variables
 
 The variable structure is based on [Providentia](https://github.com/ClarifiedSecurity/Providentia) API output. When using file based inventory then make sure to follow the same structure. Check the example blow for more details.
+
+The variable `customization_method` can take: `bsd`, `macos`, `netplan`, `networkd`, `nmcli`, `routeros`, `vyos`, `windows_cli`
+
+When selecting the network configuration method via the variable `customization_method`, if you are selecting `networkd` option, an extra variable is needed because this option can be used with different OS: `customization_method_distribution`. Possible options: `Debian`, `Archlinux`, `Scientific`
+
+Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/configure_networking/defaults/main.yml) for the full list of variables.
+
+`extra_routes` - Can be set to add extra routes per interfaces. Supported only for `netplan`
+
+```yaml
+# Example on how to configure extra routes when netplaN interface is named vpn
+extra_routes:
+  vpn:
+    - to: 10.0.0.0/8
+      via: 10.0.0.1
+```
+
+`extra_ipv4` - Can be set to add extra IPv4 addresses per interfaces
+`extra_ipv6` - Can be set to add extra IPv6 addresses per interfaces
+
+```yaml
+# Example on how to configure extra IPv4 addresses when interface is named vpn
+extra_ipv4:
+  vpn:
+    - 10.0.0.10/24
+    - 10.0.0.11/24
+    - 10.0.0.12/24
+
+extra_ipv6:
+  vpn:
+    - fd00:1234:5678:abcd::1234/64
+    - fd00:1234:5678:abcd::1235/64
+    - fd00:1234:5678:abcd::1236/64
+```
 
 ## Dependencies
 
