@@ -1,6 +1,6 @@
 # Role Name
 
-This role is usually used as a last role in a playbook. It is used to clean up some of the artifacts that are created during the deployment process. It can also be used to updates the operating system and include some extra last-stop roles.
+This role is usually used as a last role in a playbook. It is used to clean up some of the artefacts that are created during the deployment process. It can also be used to updates the operating system and include some extra last-stop roles.
 
 ## Requirements
 

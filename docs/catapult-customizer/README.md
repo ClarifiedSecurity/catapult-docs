@@ -8,7 +8,7 @@ The structure of the customization repo is as follows:
 
 ## Folders
 
-- `certificates` - Contains the trusted certificate files that will be installed into the container. The certificate format must be base64 and the file name format must be <certificate_name>.crt
+- `certificates` - Contains the trusted certificate files that will be installed into the container. The certificate format must be `base64` and the file name format must be `<certificate_name>.crt`
 
 - `container` - Contains .custom_aliases file that will be copied into the container. Refer to the [.default_aliases](https://github.com/ClarifiedSecurity/Catapult/blob/main/container/home/builder/.default_aliases) file as an example on how to create .custom_aliases.
 
@@ -28,6 +28,6 @@ The structure of the customization repo is as follows:
 
 ## Files
 
-- `example.makerc-vars` - When using non-default .makerc-vars then make sure that `example.makerc-vars is also defined in the Catapult Customizer repo because there are helper scripts that will check if your .makerc-vars contains all of the variables based on the example.makerc-vars.
+- `example.makerc-vars` - When using non-default `.makerc-vars` then make sure that `example.makerc-vars` is also defined in the Catapult Customizer repo because there are helper scripts that will check if your `.makerc-vars` contains all of the variables based on the `example.makerc-vars`.
 
-- `start.yml` - In some rare cases you might want to customize the deployment tree of Catapult. For that you can create your own start.yml file and it will be used instead of the default one. Refer to the default [start.yml](https://github.com/ClarifiedSecurity/Catapult/blob/main/defaults/start.yml) as an example.
+- `start.yml` - In some rare cases you might want to customize the deployment tree of Catapult. For that you can create your own `start.yml` file and it will be used instead of the default one. Refer to the default [start.yml](https://github.com/ClarifiedSecurity/Catapult/blob/main/defaults/start.yml) as an example.

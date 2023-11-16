@@ -71,8 +71,8 @@ Bucket access policy example - take care that you define the correct bucket name
 
 ## Public folders in the private bucket
 
-Outline wants to store and show user profile picures under **bucketname/public/** and some other avatars under **bucketname/avatars/**.
-Since we have locked down our bucket to be private, we have to add anonymous access rules under the bucket configuration (readonly access)
+Outline wants to store and show user profile pictures under **bucketname/public/** and some other avatars under **bucketname/avatars/**.
+Since we have locked down our bucket to be private, we have to add anonymous access rules under the bucket configuration (read-only access)
 
 ```shell
 avatars/
