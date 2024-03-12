@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 
 site_name: Catapult Docs
+repo_url: https://github.com/ClarifiedSecurity/catapult
 theme:
   name: material
 #  logo: assets/logo-white.png
@@ -23,3 +24,10 @@ theme:
         name: Switch to light mode
 plugins:
   - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ClarifiedSecurity/catapult
+    - icon: fontawesome/solid/globe
+      link: https://clarifiedsecurity.com
