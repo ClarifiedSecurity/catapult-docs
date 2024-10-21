@@ -5,6 +5,13 @@ Catapult's commands fall into two categories:
 - External commands - All commands that start with `make` are external commands and are used to manage the Catapult container itself.
 - Internal commands - All commands that start with `ctp` are internal commands and are used when the user is inside the Catapult container.
 
+Catapult has 2 modes for modifications:
+
+- Personalization - Where users can set their own preferences that will only affect them.
+- Customization - Where preferences are configured in a way that they apply to your team/organization etc.
+
+Follow the `# How to Personalization` & `# How to Customize` sections if you want to personalize or customize Catapult.
+
 ## Variables
 
 When running catapult for the first time it'll ask you to create a new Ansible Vault file and fill it out with your secrets. The secrets are used to connect to the hypervisors, cloud providers, and other services. Besides the required `deployer_username` & `deployer_password` here are some other variables that you might need when using Catapult with [nova.core](https://github.com/ClarifiedSecurity/nova.core) collection:
@@ -516,4 +523,56 @@ _Example usage:_
 
 ```zsh
 ctp vm suspend <inventory_hostname>
+```
+
+## Update commands
+
+These commands will be used to manually check and update for Catapult components. These are mostly useful for people who are modifying or developing Catapult. For most users the `make restart` command is enough to restart, check and update the Catapult container and components.
+
+### reinstall-default-collections
+
+Reinstall the default collections that come with Catapult. This is useful when you have made changes to the collections and you want to revert them back to the default state.
+
+_Example usage:_
+
+```zsh
+ctp update reinstall-default-collections
+```
+
+### update-nova
+
+Update the `nova.core` collection to the latest version. This is useful when you want to update the `nova.core` collection to the latest version without restarting the Catapult container.
+
+_Example usage:_
+
+```zsh
+ctp update update-nova
+```
+
+### update-venv
+
+Update the Python virtual environment to the latest version. This is useful when you want to update the Python virtual environment to the latest version without restarting the Catapult container.
+
+## Development commands
+
+These commands are useful when developing or debugging Catapult.
+
+### enable-timing
+
+Enables timing for the Ansible playbook. This is useful when you want to see how long each task takes to run.
+
+_Example usage:_
+
+```zsh
+ctp dev enable-timing
+```
+
+### disable-timing
+
+Disables timing for the Ansible playbook. This is useful when you want to disable the timing for the Ansible playbook.
+
+_Example usage:_
+
+```zsh
+ctp dev disable-timing
 ```
