@@ -22,8 +22,15 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
+
 plugins:
-  - search
+  - search:
+      enabled: true
+  - privacy: 
+      enabled: true
+  - offline:
+      enabled: true
+
 
 extra:
   social:
