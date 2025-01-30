@@ -20,7 +20,7 @@
     
     
       
-        <title>Role Name - Catapult Docs</title>
+        <title>cleanup - Catapult Docs</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#role-name" class="md-skip">
+        <a href="#cleanup" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Role Name
+              cleanup
             
           </span>
         </div>
@@ -615,7 +615,7 @@
           
   
   <span class="md-ellipsis">
-    Role Name
+    cleanup
   </span>
   
 
@@ -626,7 +626,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    cleanup
   </span>
   
 
@@ -675,27 +675,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-playbook" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Playbook
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#author-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Author Information
+      Example
     </span>
   </a>
   
@@ -826,7 +808,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    customization_post_vm_role
   </span>
   
 
@@ -868,7 +850,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    customization_pre_vm_role
   </span>
   
 
@@ -1141,7 +1123,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    linux_xrdp_keyboard
   </span>
   
 
@@ -1288,7 +1270,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    powerstate
   </span>
   
 
@@ -1393,7 +1375,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    snapshots
   </span>
   
 
@@ -1519,7 +1501,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    vcenter_vmtools_policy
   </span>
   
 
@@ -1674,27 +1656,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-playbook" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Playbook
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#author-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Author Information
+      Example
     </span>
   </a>
   
@@ -1718,30 +1682,20 @@
   
 
 
-<h1 id="role-name">Role Name</h1>
-<p>COMING SOON
-A brief description of the role goes here.</p>
+<h1 id="cleanup">cleanup</h1>
+<p>This role is used to run OS cleanup tasks on a system as one of the final steps in a playbook. It's mostly used for Lab and Exercise environments where you don't want to leave any traces of the Ansible playbook behind for the students or participants to see.</p>
 <h2 id="requirements">Requirements</h2>
-<p>COMING SOON
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.</p>
+<p>none</p>
 <h2 id="role-variables">Role Variables</h2>
-<p>COMING SOON
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.</p>
+<p>Refer to the <a href="https://github.com/novateams/nova.core/blob/main/nova/core/roles/cleanup/defaults/main.yml">defaults/main.yml</a> file for a list and description of the variables used in this role.</p>
+<p>The <code>cleanup</code> role can be included in start.yml playbook by the <code>finalize</code> role. If <code>finalize_cleanup_system: true</code> is set in host or group vars, the cleanup role will be executed at the end of the playbook.</p>
 <h2 id="dependencies">Dependencies</h2>
-<p>COMING SOON
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.</p>
-<h2 id="example-playbook">Example Playbook</h2>
-<p>COMING SOON
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:</p>
-<pre><code>- hosts: servers
-  roles:
-     - { role: username.rolename, x: 42 }
+<p>none</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-yml">- name: Including cleanup role...
+  ansible.builtin.include_role:
+    name: nova.core.cleanup
 </code></pre>
-<h2 id="license">License</h2>
-<p>AGPL-3.0-or-later</p>
-<h2 id="author-information">Author Information</h2>
-<p>COMING SOON
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).</p>
 
 
 

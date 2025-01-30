@@ -20,7 +20,7 @@
     
     
       
-        <title>Role Name - Catapult Docs</title>
+        <title>powerstate - Catapult Docs</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#role-name" class="md-skip">
+        <a href="#powerstate" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Role Name
+              powerstate
             
           </span>
         </div>
@@ -606,7 +606,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    cleanup
   </span>
   
 
@@ -732,7 +732,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    customization_post_vm_role
   </span>
   
 
@@ -774,7 +774,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    customization_pre_vm_role
   </span>
   
 
@@ -1047,7 +1047,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    linux_xrdp_keyboard
   </span>
   
 
@@ -1203,7 +1203,7 @@
           
   
   <span class="md-ellipsis">
-    Role Name
+    powerstate
   </span>
   
 
@@ -1214,7 +1214,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    powerstate
   </span>
   
 
@@ -1266,24 +1266,6 @@
   <a href="#example-playbook" class="md-nav__link">
     <span class="md-ellipsis">
       Example Playbook
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#author-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Author Information
     </span>
   </a>
   
@@ -1393,7 +1375,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    snapshots
   </span>
   
 
@@ -1519,7 +1501,7 @@
         
   
   <span class="md-ellipsis">
-    Role Name
+    vcenter_vmtools_policy
   </span>
   
 
@@ -1682,24 +1664,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#author-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Author Information
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1718,30 +1682,51 @@
   
 
 
-<h1 id="role-name">Role Name</h1>
-<p>COMING SOON
-A brief description of the role goes here.</p>
+<h1 id="powerstate">powerstate</h1>
+<p>This role can be used to manage the powerstate of a Virtual Machine. It can be used to power on-off, reset, susepend or reboot a VM.</p>
 <h2 id="requirements">Requirements</h2>
-<p>COMING SOON
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.</p>
+<p>none</p>
 <h2 id="role-variables">Role Variables</h2>
-<p>COMING SOON
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.</p>
+<p>Refer to the <a href="https://github.com/novateams/nova.core/blob/main/nova/core/roles/powerstate/defaults/main.yml">defaults/main.yml</a> file for a list and description of the variables used in this role.</p>
 <h2 id="dependencies">Dependencies</h2>
-<p>COMING SOON
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.</p>
+<p>none</p>
 <h2 id="example-playbook">Example Playbook</h2>
-<p>COMING SOON
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:</p>
-<pre><code>- hosts: servers
-  roles:
-     - { role: username.rolename, x: 42 }
+<pre><code class="language-yml">- name: Shutting down the VM...
+  ansible.builtin.include_role:
+    name: nova.core.powerstate
+  vars:
+    shutdown: true # This will try a graceful shutdown
+
+- name: Powering on the VM...
+  ansible.builtin.include_role:
+    name: nova.core.powerstate
+  vars:
+    poweron: true
+
+- name: Rebooting the VM...
+  ansible.builtin.include_role:
+    name: nova.core.powerstate
+  vars:
+    restart: true
+
+- name: Suspending the VM...
+  ansible.builtin.include_role:
+    name: nova.core.powerstate
+  vars:
+    suspend: true
+
+- name: Resetting the VM...
+  ansible.builtin.include_role:
+    name: nova.core.powerstate
+  vars:
+    reset: true
+
+- name: Powering off the VM...
+  ansible.builtin.include_role:
+    name: nova.core.powerstate
+  vars:
+    poweroff: true # This will force a power off
 </code></pre>
-<h2 id="license">License</h2>
-<p>AGPL-3.0-or-later</p>
-<h2 id="author-information">Author Information</h2>
-<p>COMING SOON
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).</p>
 
 
 
