@@ -1842,7 +1842,7 @@
 <li><code>nexus_ldap_search_base</code></li>
 <li><code>nexus_bind_user_dn</code></li>
 <li><code>nexus_bind_user_password</code></li>
-<li><code>nexus_group_dn_under_under_searchbase</code></li>
+<li><code>nexus_groups_dn_under_searchbase</code></li>
 <li><code>nexus_nexus_ldap_administrators_group</code></li>
 </ul>
 <p>Alternatively the whole <code>nexus_ldap_configuration</code> block can be defined as a single variable to configure LDAP. See <a href="https://github.com/novateams/nova.core/blob/main/nova/core/roles/nexus/defaults/main.yml">defaults/main.yml</a> for the full list of variables.</p>
@@ -1861,7 +1861,7 @@
   ansible.builtin.include_role:
     name: nova.core.nexus
   vars:
-    configure: true
+    nexus_configure: true
     nexus_admin_password: # lookup to a predefined password that will be applied to the admin user on first run
 
 # Installs Nexus and runs initial configuration on it and configures LDAP.
@@ -1869,15 +1869,15 @@
   ansible.builtin.include_role:
     name: nova.core.nexus
   vars:
-    configure: true
+    nexus_configure: true
     nexus_admin_password: # lookup to a predefined password that will be applied to the admin user on first run
-    configure_ldap: true
-    ldap_name: example.com
-    ldap_host: dc1.example.com
-    ldap_search_base: OU=ORG,DC=example,DC=com
-    bind_user_dn: CN=svc_nexus,OU=Service Accounts,OU=ORG,DC=example,DC=com
-    group_dn_under_under_searchbase: OU=Nexus,OU=Resources
-    bind_dn_password: # lookup to a predefined password for the svc_nexus user
+    nexus_configure_ldap: true
+    nexus_ldap_name: example.com
+    nexus_ldap_host: dc1.example.com
+    nexus_ldap_search_base: OU=ORG,DC=example,DC=com
+    nexus_bind_user_dn: CN=svc_nexus,OU=Service Accounts,OU=ORG,DC=example,DC=com
+    nexus_groups_dn_under_searchbase: OU=Nexus,OU=Resources
+    nexus_bind_dn_password: # lookup to a predefined password for the svc_nexus user
     nexus_ldap_administrators_group: Nexus Admins
 </code></pre>
 
