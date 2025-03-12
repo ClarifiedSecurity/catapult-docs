@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -37,7 +37,7 @@
     
     
       
-        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
       
     
     
@@ -556,6 +556,15 @@
   <a href="#ctp-host-deploy-role" class="md-nav__link">
     <span class="md-ellipsis">
       ctp host deploy-role
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctp-host-deploy-single-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      ctp host deploy-single-role
     </span>
   </a>
   
@@ -2305,6 +2314,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ctp-host-deploy-single-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      ctp host deploy-single-role
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ctp-host-deploy-network" class="md-nav__link">
     <span class="md-ellipsis">
       ctp host deploy-network
@@ -2756,22 +2774,20 @@
 <pre><code class="language-zsh">ctp host deploy-from-configuration &lt;inventory_hostname&gt;
 </code></pre>
 <h3 id="ctp-host-deploy-role">ctp host deploy-role</h3>
-<p>Runs only the <code>/srv/&lt;project_name&gt;/vm/&lt;role_name&gt;</code> part of the playbook and then stops. This is a useful during role developing and or when you want to minimize the time it takes to configure something. For an example only reconfiguring the user accounts of the machine by using single_role with <code>nova.core.accounts</code> role.</p>
+<p>Runs only the <code>/srv/&lt;project_name&gt;/vm/&lt;role_name&gt;</code> part of the playbook and then stops. This is a useful during role developing and or when you want to minimize the time it takes to configure something.</p>
 <p><em>Example usage:</em></p>
 <ul>
 <li>Only runs the role for inventory_hostname and then stops the play can also be used against all or group_var</li>
 </ul>
 <pre><code class="language-zsh">ctp host deploy-role &lt;inventory_hostname&gt;
 </code></pre>
+<h3 id="ctp-host-deploy-single-role">ctp host deploy-single-role</h3>
+<p>Runs only the role defined as the first parameter and then stops. The role <code>role path or FQCN</code> is tab-completable based on installed collections and roles in the project.</p>
+<p><em>Example usage:</em></p>
 <ul>
-<li>Looks for role under defined path and only runs that and stops</li>
+<li>Run a specific role for a given inventory_hostname (or group) and the stops play</li>
 </ul>
-<pre><code class="language-zsh">ctp host deploy-role &lt;inventory_hostname&gt; -e single_role=path/to/role
-</code></pre>
-<ul>
-<li>Looks for role with the fully qualified role name (FQCN) in the installed collections and only runs that and stops</li>
-</ul>
-<pre><code class="language-zsh">ctp host deploy-role &lt;inventory_hostname&gt; -e single_role=&lt;role.fqcn&gt;
+<pre><code class="language-zsh">ctp host deploy-single-role &lt;role path or FQCN&gt; &lt;inventory_hostname&gt;
 </code></pre>
 <h3 id="ctp-host-deploy-network">ctp host deploy-network</h3>
 <p>Runs ctp host deploy and also includes networks configuration role</p>
@@ -3083,7 +3099,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
