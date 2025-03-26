@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -37,7 +37,7 @@
     
     
       
-        <script src="https://unpkg.com/iframe-worker/shim"></script>
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
       
     
     
@@ -565,6 +565,15 @@
   <a href="#ctp-host-deploy-single-role" class="md-nav__link">
     <span class="md-ellipsis">
       ctp host deploy-single-role
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctp-host-deploy-pre-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      ctp host deploy-pre-role
     </span>
   </a>
   
@@ -2323,6 +2332,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ctp-host-deploy-pre-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      ctp host deploy-pre-role
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ctp-host-deploy-network" class="md-nav__link">
     <span class="md-ellipsis">
       ctp host deploy-network
@@ -2782,12 +2800,20 @@
 <pre><code class="language-zsh">ctp host deploy-role &lt;inventory_hostname&gt;
 </code></pre>
 <h3 id="ctp-host-deploy-single-role">ctp host deploy-single-role</h3>
-<p>Runs only the role defined as the first parameter and then stops. The role <code>role path or FQCN</code> is tab-completable based on installed collections and roles in the project.</p>
+<p>Runs only the role defined as the first parameter and then stops. The role <code>role path or FQCN</code> is tab-completable based on installed collections and roles in the project. This is a useful command when you want to run a specific role for a given inventory_hostname (or group) and then stop the play.</p>
 <p><em>Example usage:</em></p>
 <ul>
 <li>Run a specific role for a given inventory_hostname (or group) and the stops play</li>
 </ul>
 <pre><code class="language-zsh">ctp host deploy-single-role &lt;role path or FQCN&gt; &lt;inventory_hostname&gt;
+</code></pre>
+<h3 id="ctp-host-deploy-pre-role">ctp host deploy-pre-role</h3>
+<p>Runs only the pre_role defined as the first parameter and then stops. The role <code>role path or FQCN</code> is tab-completable based on installed collections and roles in the project. This is a useful command when you want to run a specific role for a given inventory_hostname (or group) and then stop the play. The difference between <code>ctp host deploy-single-role</code> and <code>ctp host deploy-pre-role</code> is that the <code>ctp host deploy-pre-role</code> the the pre_role never connects to the target machine and runs the role from localhost. This is useful when interacting with the hypervisor, cloud provider or APIs.</p>
+<p><em>Example usage:</em></p>
+<ul>
+<li>Run a specific role for a given inventory_hostname (or group) and the stops play</li>
+</ul>
+<pre><code class="language-zsh">ctp host deploy-pre-role &lt;role path or FQCN&gt; &lt;inventory_hostname&gt;
 </code></pre>
 <h3 id="ctp-host-deploy-network">ctp host deploy-network</h3>
 <p>Runs ctp host deploy and also includes networks configuration role</p>
