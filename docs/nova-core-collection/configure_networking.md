@@ -1,6 +1,6 @@
 # configure_networking
 
-This is a role to configure networking for a VM after cloning. Currently it is only supporting network configuration for VMs deployed on VMware vSphere, but the scripts are more or less universal and can be modified to add support to different hypervisors. [Here](https://github.com/novateams/nova.core/tree/main/nova/core/roles/configure_networking/tasks/vsphere) is a list of all supported network methods.
+This is a role to configure networking for a VM after cloning. Currently it is only supporting network configuration for VMs deployed on VMware vSphere, but the scripts are more or less universal and can be modified to add support to different hypervisors. [Here](https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/configure_networking/tasks/vsphere) is a list of all supported network methods.
 
 ## Requirements
 
@@ -14,7 +14,7 @@ The variable `customization_method` can take: `bsd`, `macos`, `netplan`, `networ
 
 When selecting the network configuration method via the variable `customization_method`, if you are selecting `networkd` option, an extra variable is needed because this option can be used with different OS: `customization_method_distribution`. Possible options: `Debian`, `Archlinux`, `Scientific`
 
-Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/configure_networking/defaults/main.yml) for the full list of variables.
+Refer to [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/configure_networking/defaults/main.yml) for the full list of variables.
 
 `extra_routes` - Can be set to add extra routes per interfaces. Supported only for `netplan`
 

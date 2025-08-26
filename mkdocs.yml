@@ -6,13 +6,10 @@ repo_url: https://github.com/ClarifiedSecurity/catapult
 theme:
   name: material
   custom_dir: overrides
-#  logo: assets/logo-white.png
-#  favicon: assets/logo.png
   highlightjs: true
   features:
     - content.code.copy
   palette:
-
     # Palette toggle for light mode
     - scheme: slate
       toggle:
@@ -28,11 +25,10 @@ theme:
 plugins:
   - search:
       enabled: true
-  - privacy: 
+  - privacy:
       enabled: true
   - offline:
       enabled: true
-
 
 extra:
   social:

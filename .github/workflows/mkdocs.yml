@@ -32,33 +32,37 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 1
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 1
-          repository: "ClarifiedSecurity/catapult"
-          path: "catapult"
+          repository: ClarifiedSecurity/catapult
+          path: catapult
           token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 1
-          repository: "ClarifiedSecurity/catapult-customizer"
-          path: "catapult-customizer"
+          repository: ClarifiedSecurity/catapult-customizer
+          path: catapult-customizer
           token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 1
-          repository: "ClarifiedSecurity/nova.core"
-          path: "nova-core"
+          repository: ClarifiedSecurity/nova.core
+          path: nova-core
           token: ${{ secrets.TOKEN_CATAPULT_DOCS }}
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult/docs/ docs/catapult/
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' catapult-customizer/ docs/catapult-customizer/
       - run: rsync -avm --delete --include='*/' --include='*.md' --exclude='*' nova-core/nova/core/roles/ docs/nova-core-collection/
-      - run: find docs/nova-core-collection/ -type f -iname "*.md" -exec sh -c 'dir=$(dirname "$1"); parent=$(dirname "$dir"); base=$(basename "$dir"); mv "$1" "$parent/$base.md" ' sh {} \;
+      - run:
+          find docs/nova-core-collection/ -type f -iname "*.md" -exec sh -c 'dir=$(dirname "$1");
+          parent=$(dirname "$dir"); base=$(basename "$dir"); mv "$1" "$parent/$base.md" ' sh {} \;
       - run: find docs/nova-core-collection/ -type d -depth -empty -exec rmdir {} \;
       - run: rm -rf catapult catapult-customizer nova-core
+      - run: find docs/nova-core-collection/ -type f -exec
+          sed -i 's|https://github.com/novateams/nova.core|https://github.com/ClarifiedSecurity/nova.core|g' {} \;
       - run: |
           git config --global user.name "CatapultBot"
           git config --global user.email "catapult@clarifiedsecurity.com"
@@ -68,24 +72,16 @@ jobs:
           git push -o ci.skip
           git status
 
-  ### mk docs job
   docs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 1
       - run: git fetch --all --depth=1 && git pull --all --rebase --depth=1
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: 3.x
-      #- run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-      #- uses: actions/cache@v3
-      #  with:
-      #    key: mkdocs-material-${{ env.cache_id }}
-      #    path: .cache
-      #    restore-keys: |
-      #      mkdocs-material-
       - run: pip install mkdocs-material
       - run: mkdocs gh-deploy --force

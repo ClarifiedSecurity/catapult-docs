@@ -8,7 +8,7 @@ none
 
 ## Role Variables
 
-Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/tuoni/defaults/main.yml) for the full list of variables.
+Refer to [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/tuoni/defaults/main.yml) for the full list of variables.
 
 ## Dependencies
 
@@ -18,5 +18,6 @@ none
 
 ```yaml
 - name: Including Tuoni role...
-  ansible.builtin.include_role: nova.core.tuoni
+  ansible.builtin.include_role:
+    name: nova.core.tuoni
 ```

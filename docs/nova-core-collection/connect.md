@@ -10,7 +10,7 @@ none
 
 ## Role Variables
 
-Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/connect/defaults/main.yml) for the full list of variables.
+Refer to [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/connect/defaults/main.yml) for the full list of variables.
 
 ## Dependencies
 

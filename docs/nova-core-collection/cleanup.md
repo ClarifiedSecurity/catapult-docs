@@ -8,7 +8,7 @@ none
 
 ## Role Variables
 
-Refer to the [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/cleanup/defaults/main.yml) file for a list and description of the variables used in this role.
+Refer to the [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/cleanup/defaults/main.yml) file for a list and description of the variables used in this role.
 
 The `cleanup` role can be included in start.yml playbook by the `finalize` role. If `finalize_cleanup_system: true` is set in host or group vars, the cleanup role will be executed at the end of the playbook.
 

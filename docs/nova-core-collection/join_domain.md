@@ -20,7 +20,7 @@ Required an Active Directory domain controller to be installed and available.
 
 One special variable not defined in defaults is `computer_ou`. This variable is used to specify the OU where the computer object should be created. If this variable is not defined, the computer object will be created in the default Computers container.
 
-Refer to the [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/join_domain/defaults/main.yml) file for a list of variables and their default values.
+Refer to the [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/join_domain/defaults/main.yml) file for a list of variables and their default values.
 
 ## Dependencies
 

@@ -8,7 +8,7 @@ The certificates must be in PEM (base64 encoded) format. The role will convert t
 
 ## Role Variables
 
-Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/trusted_certificates/defaults/main.yml) for the full list of variables.
+Refer to [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/trusted_certificates/defaults/main.yml) for the full list of variables.
 
 ## Dependencies
 

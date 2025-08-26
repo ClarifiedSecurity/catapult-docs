@@ -14,7 +14,7 @@ Required variables are:
 - `role_metadata_post_providentia_uri` - The URI of the Providentia server.
 - `role_metadata_post_keycloak_realm_name` - The name of the Keycloak realm used for Providentia authentication.
 
-Refer to the [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/role_metadata_generate/defaults/main.yml) file for a list and description of the variables used in this role.
+Refer to the [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/role_metadata_generate/defaults/main.yml) file for a list and description of the variables used in this role.
 
 ## Dependencies
 

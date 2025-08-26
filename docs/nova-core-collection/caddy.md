@@ -8,11 +8,11 @@ none
 
 ## Role Variables
 
-Refer to the [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/caddy/defaults/main.yml) file for a list and description of the variables used in this role.
+Refer to the [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/caddy/defaults/main.yml) file for a list and description of the variables used in this role.
 
 ## Dependencies
 
-- Depends on Docker and Docker Compose being installed on the host. Docker can be installed using the [nova.core.docker](https://github.com/novateams/nova.core/tree/main/nova/core/roles/caddy) role.
+- Depends on Docker and Docker Compose being installed on the host. Docker can be installed using the [nova.core.docker](https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/caddy) role.
 
 ## Example
 
@@ -56,4 +56,24 @@ Refer to the [defaults/main.yml](https://github.com/novateams/nova.core/blob/mai
           - www.example.com
           - www2.example.com
         caddy_server_reverse_proxy_to_address: http://internal.example.com
+```
+
+```yaml
+# Installing Caddy server that has no configuration but API enabled from localhost for further configuration
+- name: Installing Caddy...
+  ansible.builtin.include_role:
+    name: nova.core.caddy
+  vars:
+    caddy_enable_api: true
+```
+
+```yaml
+# Installing Caddy server that has no configuration but API enabled from everywhere for further configuration
+# Careful with this, as it allows anyone to access the Caddy API. The API port should be protected by a firewall.
+- name: Installing Caddy...
+  ansible.builtin.include_role:
+    name: nova.core.caddy
+  vars:
+    caddy_enable_api: true
+    caddy_api_from_localhost_only: false
 ```

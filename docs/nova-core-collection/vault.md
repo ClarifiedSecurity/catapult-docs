@@ -14,11 +14,11 @@ During initial setup of Vault, the root token and unseal key(s) are saved to `/s
 
 ## Role Variables
 
-Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/vault/defaults/main.yml) for the full list of variables, their default values and descriptions.
+Refer to [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/vault/defaults/main.yml) for the full list of variables, their default values and descriptions.
 
 ## Dependencies
 
-- Depends on Docker and Docker Compose being installed on the host. Docker can be installed using the [nova.core.docker](https://github.com/novateams/nova.core/tree/main/nova/core/roles/docker) role.
+- Depends on Docker and Docker Compose being installed on the host. Docker can be installed using the [nova.core.docker](https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/docker) role.
 
 ## Example
 
@@ -89,6 +89,6 @@ Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/no
     name: nova.core.vault
     vars:
       vault_configure: true
-      vault_create_root_ca: true # Create a self-signed root CA
-      vault_create_intermediate_ca: true # Create an intermediate CA (signed by the root CA)
+      vault_create_root_ca: true # Create a self-signed root CA based on the role defaults
+      vault_create_intermediate_ca: true # Create an intermediate CA (signed by the root CA) based on the role defaults
 ```

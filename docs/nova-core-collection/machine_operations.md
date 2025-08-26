@@ -14,7 +14,7 @@ none
 
 ## Role Variables
 
-Refer to the [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/machine_operations/defaults/main.yml) file for a list of variables and their default values.
+Refer to the [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/machine_operations/defaults/main.yml) file for a list of variables and their default values.
 
 A required variable is `infra_env` this will tell the playbook which environment to create the VM in. Available options are:
 

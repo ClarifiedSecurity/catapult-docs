@@ -8,7 +8,7 @@ This is a role for installing [Providentia](https://github.com/ClarifiedSecurity
 
 ## Role Variables
 
-Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/providentia/defaults/main.yml) for the full list of variables, their default values and descriptions.
+Refer to [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/providentia/defaults/main.yml) for the full list of variables, their default values and descriptions.
 
 Required variables:
 
@@ -18,7 +18,7 @@ If included, the keycloak will be using `keycloak.{{ providentia_app_fqdn }}` as
 
 ## Dependencies
 
-- Depends on Docker and Docker Compose being installed on the host. By default, [nova.core.docker](https://github.com/novateams/nova.core/tree/main/nova/core/roles/docker) role is included, this can be disabled by setting `providentia_install_docker` to false.
+- Depends on Docker and Docker Compose being installed on the host. By default, [nova.core.docker](https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/docker) role is included, this can be disabled by setting `providentia_install_docker` to false.
 - Certificates for reverse proxy, if used with TLS
 
 ## Notes

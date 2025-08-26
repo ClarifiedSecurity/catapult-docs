@@ -8,7 +8,7 @@ none
 
 ## Role Variables
 
-Refer to the [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/vcenter_vmtools_policy/defaults/main.yml) file for a list and description of the variables used in this role.
+Refer to the [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/vcenter_vmtools_policy/defaults/main.yml) file for a list and description of the variables used in this role.
 
 ## Dependencies
 

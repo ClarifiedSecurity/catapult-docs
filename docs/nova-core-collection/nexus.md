@@ -12,7 +12,7 @@ This is a role for installing and configuring [Nexus Repository Manager 3](https
 
 ## Role Variables
 
-Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/nexus/defaults/main.yml) for the full list of variables, their default values and descriptions.
+Refer to [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/nexus/defaults/main.yml) for the full list of variables, their default values and descriptions.
 
 ### Required Variables for Installation
 
@@ -33,11 +33,11 @@ Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/no
 - `nexus_groups_dn_under_searchbase`
 - `nexus_nexus_ldap_administrators_group`
 
-Alternatively the whole `nexus_ldap_configuration` block can be defined as a single variable to configure LDAP. See [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/nexus/defaults/main.yml) for the full list of variables.
+Alternatively the whole `nexus_ldap_configuration` block can be defined as a single variable to configure LDAP. See [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/nexus/defaults/main.yml) for the full list of variables.
 
 ## Dependencies
 
-- Depends on Docker and Docker Compose being installed on the host. Docker can be installed using the [nova.core.docker](https://github.com/novateams/nova.core/tree/main/nova/core/roles/docker) role.
+- Depends on Docker and Docker Compose being installed on the host. Docker can be installed using the [nova.core.docker](https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/docker) role.
 
 ## Example
 

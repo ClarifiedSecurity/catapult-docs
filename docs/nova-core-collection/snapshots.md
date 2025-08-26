@@ -8,7 +8,7 @@ none
 
 ## Role Variables
 
-Refer to [defaults/main.yml](https://github.com/novateams/nova.core/blob/main/nova/core/roles/snapshots/defaults/main.yml) for the full list of variables, their default values and descriptions.
+Refer to [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/snapshots/defaults/main.yml) for the full list of variables, their default values and descriptions.
 
 One of the following variables must be set:
 
