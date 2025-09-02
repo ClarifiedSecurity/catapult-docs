@@ -1787,14 +1787,12 @@
 <p><code>container</code> - Contains .custom_aliases file that will be copied into the container. Refer to the <a href="https://github.com/ClarifiedSecurity/Catapult/blob/main/container/home/builder/.default_aliases">.default_aliases</a> file as an example on how to create .custom_aliases.</p>
 </li>
 <li>
-<p><code>docker</code> - Contains custom <code>docker-compose-custom.yml</code> to add extra environment variables/volumes/etc to the container. Refer to the default <a href="https://github.com/ClarifiedSecurity/catapult/blob/main/defaults/docker-compose-custom.yml">docker-compose-custom.yml</a> &amp; <a href="https://github.com/ClarifiedSecurity/catapult/blob/main/docker/docker-compose.yml">docker-compose.yml</a> for examples.</p>
+<p><code>docker</code> - Contains custom <code>docker-compose-custom.yml</code> to add extra environment variables/volumes/etc to the container. Refer to the default <a href="https://github.com/ClarifiedSecurity/catapult/blob/main/defaults/docker-compose-custom.yml">docker-compose-custom.yml</a> &amp; <a href="https://github.com/ClarifiedSecurity/catapult/blob/main/defaults/docker-compose.yml">docker-compose.yml</a> for examples.</p>
 </li>
 <li>
 <p><code>docker-entrypoints</code> - Contains custom docker-entrypoint scripts that will run inside the container during <code>make start</code>. Refer to default <a href="https://github.com/ClarifiedSecurity/Catapult/tree/main/scripts/entrypoints">entrypoint</a> scripts for examples. The scripts are divided into two folders: <code>first-run</code> and <code>every-run</code>:</p>
 </li>
-<li>
-<p><code>first-run</code> - Contains scripts that will run only once when the container is started for the first time.</p>
-</li>
+<li><code>first-run</code> - Contains scripts that will run only once when the container is started for the first time.</li>
 <li><code>every-run</code> - Contains scripts that will run every time the container is started. Useful for an example when setting up the environment variables for each user session.</li>
 </ul>
 <p><strong><code>docker-entrypoints</code> only supports <code>*.sh</code> files that get sourced by <code>zsh</code> shell.</strong></p>
