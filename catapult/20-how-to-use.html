@@ -393,9 +393,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variables" class="md-nav__link">
+  <a href="#secrets" class="md-nav__link">
     <span class="md-ellipsis">
-      Variables
+      Secrets
     </span>
   </a>
   
@@ -2210,9 +2210,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variables" class="md-nav__link">
+  <a href="#secrets" class="md-nav__link">
     <span class="md-ellipsis">
-      Variables
+      Secrets
     </span>
   </a>
   
@@ -2729,13 +2729,8 @@
 <li>Customization - Where preferences are configured in a way that they apply to your team/organization etc.</li>
 </ul>
 <p>Follow the <code># How to Personalization</code> &amp; <code># How to Customize</code> sections if you want to personalize or customize Catapult.</p>
-<h2 id="variables">Variables</h2>
-<p>When running catapult for the first time it'll ask you to create a new Ansible Vault file and fill it out with your secrets. The secrets are used to connect to the hypervisors, cloud providers, and other services. Besides the required <code>deployer_username</code> &amp; <code>deployer_password</code> here are some other variables that you might need when using Catapult with <a href="https://github.com/ClarifiedSecurity/nova.core">nova.core</a> collection:</p>
-<ul>
-<li><code>aws_access_key_id:</code> - AWS access key ID - can be generated from the AWS Identity and Access Management (IAM) console</li>
-<li><code>aws_access_key:</code> - AWS access key itself - can be generated from the AWS Identity and Access Management (IAM) console</li>
-<li><code>linode_api_token:</code> - Linode API token - can be generated from the <a href="https://cloud.linode.com/profile/tokens">Linode Cloud Manager</a></li>
-</ul>
+<h2 id="secrets">Secrets</h2>
+<p>When running catapult for the first time it'll ask you to create a new Ansible Vault file and fill it out with your secrets. The secrets are used to connect to the hypervisors, cloud providers, and other services. Default keys are <code>deployer_username</code> &amp; <code>deployer_password</code> these are usually your username and password for connecting <a href="https://github.com/ClarifiedSecurity/Providentia">Providentia</a> and your hypervisor. When trying to deploy to cloud environments like AWS, Azure. etc. Catapult will tell you what secrets are missing and need to be added the the Vault.</p>
 <h2 id="enter-the-catapult">Enter the Catapult</h2>
 <ul>
 <li>Start the Catapult container if it does not exist and connect to it, if the container is running it'll just connect to it:</li>
@@ -2748,7 +2743,8 @@
 <pre><code class="language-sh">make restart
 </code></pre>
 <h2 id="projects">Projects</h2>
-<p>Catapult is designed to work with multiple projects. Each project has its own inventory, roles, and variables. The project is selected when the user enters the Catapult container. The project is selected based on the presence of the <code>.git</code> folder in the <code>/srv/inventories</code> project directory subfolder. If there is only one project the command will select it automatically. Refer to <a href="https://github.com/ClarifiedSecurity/catapult-project-example">catapult-project-example</a> on how to structure your project.</p>
+<p>Catapult is designed to work with multiple projects. Each project has its own inventory, roles, and variables. The project is selected when the user enters the Catapult container. The project is selected based on the presence of the <code>.git</code> folder in the <code>/srv/inventories</code> project directory subfolder. If there is only one project the command will select it automatically.</p>
+<p>Use <a href="https://github.com/ClarifiedSecurity/catapult-project-example">Catapult Project Example</a> for a basic setup to get you started.</p>
 <h2 id="tips-and-tricks">Tips and tricks</h2>
 <ul>
 <li>Use tab completion to get the list of available commands. For example, type <code>ctp</code> and press tab to get the list of available commands.</li>

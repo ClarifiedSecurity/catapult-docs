@@ -1830,11 +1830,11 @@
 
 
 <h1 id="customization_pre_role">customization_pre_role</h1>
-<p>This role gets loaded in <code>start.yml</code> before any connection is made to the Ansible inventory host. It can be used include roles that interact with different services or APIs directly from the Catapult container. It'll first check if a role name matching <code>pre_role</code> variable exists in <code>{{ inventory_dir }}/roles</code> and includes it. If no role exits it'll try to include the role based on the FQCN defined in <code>pre_role</code> variable. After the include role is complete the play stops.</p>
+<p>This role gets loaded in <code>start.yml</code> before any connection is made to the Ansible inventory host. It can be used include roles that interact with different services or APIs directly from the Catapult container. It'll first check if a role name matching <code>pre_role</code> variable exists in <code>roles</code> and includes it. If no role exits it'll try to include the role based on the FQCN defined in <code>pre_role</code> variable. After the include role is complete the play stops.</p>
 <h2 id="requirements">Requirements</h2>
 <p><code>pre_role</code> variable must be defined</p>
 <h2 id="role-variables">Role Variables</h2>
-<p><code>pre_role</code> - role name in <code>{{ inventory_dir }}/roles</code> or role FQCN to be included.</p>
+<p><code>pre_role</code> - role name in <code>roles</code> folder or role FQCN to be included.</p>
 <h2 id="dependencies">Dependencies</h2>
 <p>None</p>
 <h2 id="example">Example</h2>
