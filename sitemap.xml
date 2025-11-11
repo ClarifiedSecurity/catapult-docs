@@ -2,222 +2,222 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/index.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/catapult/01-installation.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/catapult/20-how-to-use.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/catapult/30-how-to-personalize.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/catapult/40-how-to-customize.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/catapult/50-template-requirements.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/catapult/91-generate-ssh-keypair.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/catapult/92-contributing.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/catapult-customizer/index.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/accounts.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/caddy.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/cleanup.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/configure_networking.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/configure_package_mirrors.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/connect.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/connection.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/customization.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/customization_post_vm_role.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/customization_pre_role.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/customization_pre_vm_role.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/customization_single_role.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/deploy_vars.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/docker.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/expo.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/finalize.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/firewall.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/gather_facts.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/get_ip.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/gitlab.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/gitlab_runner.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/join_domain.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/keycloak.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/linux_xrdp_keyboard.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/linux_xrdp_server.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/machine_operations.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/monolith.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/nexus.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/os_configuration.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/outline.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/powerstate.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/providentia.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/rename_vm.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/role_metadata_post.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/secrets_to_vault.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/snapshots.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/template_os_configuration.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/trusted_certificates.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/tuoni.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/updates.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/vault.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/vcenter_vmtools_policy.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/win_configure_rdp.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/win_dc_post_reboot_check.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/win_sysprep.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/win_test_pending_reboot.html</loc>
-         <lastmod>2025-09-22</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
 </urlset>
