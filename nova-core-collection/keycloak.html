@@ -1207,7 +1207,7 @@
   <span class="md-ellipsis">
     
   
-    Gitlab
+    gitlab
   
 
     
@@ -2151,6 +2151,12 @@
 <li><code>nova.core.docker</code></li>
 </ul>
 <h2 id="example">Example</h2>
+<p>To add extra configuration to vars follow these steps:</p>
+<ol>
+<li>Configure the keycloak settings manually and test that they work</li>
+<li>Export the realm configuration from Keycloak admin console</li>
+<li>Based on the exported configuration, create the corresponding variables in your host/group vars to be used by this role.</li>
+</ol>
 <pre><code class="language-yaml"># Example on how to install Keycloak with Providentia client and LDAPs (AD) group mapper
 dependencies:
   - role: nova.core.keycloak

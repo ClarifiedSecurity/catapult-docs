@@ -1207,7 +1207,7 @@
   <span class="md-ellipsis">
     
   
-    Gitlab
+    gitlab
   
 
     
@@ -2200,13 +2200,14 @@
       vault_userdn: OU=Users,OU=ORG,DC=example,DC=com
       vault_ldaps_certificate_source: /usr/local/share/ca-certificates/LDAPRootCA.crt # Path or URL to the LDAP server's root CA certificate
       vault_policies:
-        - policy_name: developers
-          policy_content: |-
-            path &quot;developers/data/*&quot; { capabilities = [&quot;create&quot;, &quot;read&quot;, &quot;update&quot;, &quot;patch&quot;, &quot;delete&quot;, &quot;list&quot;] }
-            path &quot;developers/metadata/*&quot; { capabilities = [&quot;create&quot;, &quot;read&quot;, &quot;update&quot;, &quot;patch&quot;, &quot;delete&quot;, &quot;list&quot;] }
-            path &quot;developers/metadata&quot; { capabilities = [&quot;list&quot;] }
-          vault_group_name: developers
+        - vault_group_name: developers # This is the Vault group name that will be created
           ldap_group_name: vault-developers # This is the LDAP group name that will be mapped to the Vault group for this policy
+          policies:
+            - name: developers # This is the name of the policy that will be created
+              content: |- # These are the permissions for the developers policy
+                path &quot;developers/data/*&quot; { capabilities = [&quot;create&quot;, &quot;read&quot;, &quot;update&quot;, &quot;patch&quot;, &quot;delete&quot;, &quot;list&quot;] }
+                path &quot;developers/metadata/*&quot; { capabilities = [&quot;create&quot;, &quot;read&quot;, &quot;update&quot;, &quot;patch&quot;, &quot;delete&quot;, &quot;list&quot;] }
+                path &quot;developers/metadata&quot; { capabilities = [&quot;list&quot;] }
 </code></pre>
 <pre><code class="language-yaml"># Installing Vault and running initial configuration and configuring PKI with default values
 - name: Installing &amp; configuring Vault with PKI...
