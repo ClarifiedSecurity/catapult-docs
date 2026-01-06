@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1125,10 +1125,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        Examples
       
     </span>
   </a>
@@ -2107,10 +2107,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example
+        Examples
       
     </span>
   </a>
@@ -2145,10 +2145,24 @@
 <p>Refer to the <a href="https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/docker/defaults/main.yml">defaults/main.yml</a> file for a list of variables and their default values.</p>
 <h2 id="dependencies">Dependencies</h2>
 <p>none</p>
-<h2 id="example">Example</h2>
-<pre><code class="language-yaml">- name: Including docker role...
+<h2 id="examples">Examples</h2>
+<pre><code class="language-yaml">- name: Including docker role
   ansible.builtin.include_role:
     name: nova.core.docker
+</code></pre>
+<pre><code class="language-yaml">- name: Including docker with multiple custom networks...
+  ansible.builtin.include_role:
+    name: nova.core.docker
+  vars:
+    docker_networks:
+      - name: local-network
+        enable_ipv6: true
+        ipv4_subnet: 172.18.0.0/16
+        ipv6_subnet: fd42::/64
+      - name: local-network2
+        enable_ipv6: true
+        ipv4_subnet: 172.19.0.0/16
+        ipv6_subnet: fd43::/64
 </code></pre>
 
 
@@ -2226,10 +2240,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
