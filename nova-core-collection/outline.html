@@ -1540,10 +1540,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#minio-for-s3-compatible-file-storage-service" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minio for s3 compatible file storage service
+        Requirements
       
     </span>
   </a>
@@ -1551,10 +1551,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#minio" class="md-nav__link">
+  <a href="#role-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minio
+        Role Variables
       
     </span>
   </a>
@@ -1562,10 +1562,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#public-folders-in-the-private-bucket" class="md-nav__link">
+  <a href="#dependencies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Public folders in the private bucket
+        Dependencies
       
     </span>
   </a>
@@ -1573,32 +1573,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#minio-automatic-configuration-for-outline" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minio automatic configuration for outline
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reverse-proxy-for-the-services" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reverse proxy for the services
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#importing-and-exporting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Importing and exporting
+        Example
       
     </span>
   </a>
@@ -2096,10 +2074,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#minio-for-s3-compatible-file-storage-service" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minio for s3 compatible file storage service
+        Requirements
       
     </span>
   </a>
@@ -2107,10 +2085,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#minio" class="md-nav__link">
+  <a href="#role-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minio
+        Role Variables
       
     </span>
   </a>
@@ -2118,10 +2096,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#public-folders-in-the-private-bucket" class="md-nav__link">
+  <a href="#dependencies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Public folders in the private bucket
+        Dependencies
       
     </span>
   </a>
@@ -2129,32 +2107,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#minio-automatic-configuration-for-outline" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minio automatic configuration for outline
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reverse-proxy-for-the-services" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reverse proxy for the services
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#importing-and-exporting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Importing and exporting
+        Example
       
     </span>
   </a>
@@ -2182,90 +2138,32 @@
 
 
 <h1 id="outline">outline</h1>
-<p>These are the required variables that you need to define for your environment.</p>
-<pre><code class="language-yaml">## Database password
-postgres_password:
+<p>This is a role for installing <a href="https://www.getoutline.com/">Outline Wiki</a> using local storage and Docker Compose.</p>
+<h2 id="requirements">Requirements</h2>
+<p><code>Docker</code> - Can be installed using the <code>nova.core.docker</code> role.
+<code>Web Proxy</code> - Can be installed using the <code>nova.core.caddy</code> role.
+<code>TLS Certificates</code> - Can be self-signed or obtained from a trusted CA like Let's Encrypt. Can be requested using the <code>nova.core.caddy</code> role if Caddy is accessible from the internet.</p>
+<h2 id="role-variables">Role Variables</h2>
+<p>Refer to the <a href="https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/outline/defaults/main.yml">defaults/main.yml</a> file for a list of variables and their default values.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p><code>nova.core</code> Ansible collection installed</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-yaml"># Fix any errors reported from missing variables by adding them to your project's group_vars/host_vars files.
+---
+# Include all of the required dependencies in a another roles meta/main.yml file.
+dependencies:
+  - role: nova.core.docker
 
-## For accessing the configured bucket in minio
-outline_s3_access_key_id:
-outline_s3_secret_access_key:
+  - role: nova.core.outline
 
-## These secrets need to be 32 byte hex strings. Generate with &quot;openssl rand -hex 32&quot;
-outline_secret_key:
-outline_utils_secret_key:
-
-## Generic OIDC configuration
-outline_oidc_client_id:
-outline_oidc_client_secret:
-
-## Example with keycloak
-outline_oidc_auth_uri: https://keycloak.example.net/auth/realms/EXAMPLE/protocol/openid-connect/auth
-outline_oidc_token_uri: https://keycloak.example.net/auth/realms/EXAMPLE/protocol/openid-connect/token
-outline_oidc_userinfo_uri: https://keycloak.example.net/auth/realms/EXAMPLE/protocol/openid-connect/userinfo
-outline_oidc_logout_uri: https://keycloak.example.net/auth/realms/EXAMPLE/protocol/openid-connect/logout
-## Outline landing page visual effect only
-outline_oidc_display_name: &quot;OIDC provider&quot;
+  - role: nova.core.caddy
+    vars:
+      caddy_servers:
+        - caddy_server_name: &quot;{{ fqdn }}&quot;
+          caddy_server_listen_addresses:
+            - &quot;{{ fqdn }}&quot;
+          caddy_server_reverse_proxy_to_address: http://outline:3000
 </code></pre>
-<h2 id="minio-for-s3-compatible-file-storage-service">Minio for s3 compatible file storage service</h2>
-<p>The latest versions of outline can now store files in a filesystem mount, previously an s3 service was a requirement.
-This role still uses minio for s3. We have not tested the new feature yet.</p>
-<h2 id="minio">Minio</h2>
-<p>Using this role we setup minio to be hosted on the same instance as outline itself, behind a reverse proxy. The minio service opens 2 ports - one for the user facing API and one for the administration console.</p>
-<p>Once the minio service is up, using the administrators console, create a bucket for outline file storage. Add a user and assign an access policy that allows access to said bucket.
-Do not leave the bucket open as a "public bucket"</p>
-<p>Bucket access policy example - take care that you define the correct bucket name.</p>
-<pre><code class="language-json">{
-  &quot;Version&quot;: &quot;2012-10-17&quot;,
-  &quot;Statement&quot;: [
-    {
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Action&quot;: [
-        &quot;s3:GetBucketLocation&quot;,
-        &quot;s3:ListBucket&quot;,
-        &quot;s3:ListBucketMultipartUploads&quot;
-      ],
-      &quot;Resource&quot;: [&quot;arn:aws:s3:::odata&quot;]
-    },
-    {
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Action&quot;: [
-        &quot;s3:AbortMultipartUpload&quot;,
-        &quot;s3:DeleteObject&quot;,
-        &quot;s3:GetObject&quot;,
-        &quot;s3:ListMultipartUploadParts&quot;,
-        &quot;s3:PutObject&quot;
-      ],
-      &quot;Resource&quot;: [&quot;arn:aws:s3:::odata/*&quot;]
-    }
-  ]
-}
-</code></pre>
-<h2 id="public-folders-in-the-private-bucket">Public folders in the private bucket</h2>
-<p>Outline wants to store and show user profile pictures under <strong>bucketname/public/</strong> and some other avatars under <strong>bucketname/avatars/</strong>.
-Since we have locked down our bucket to be private, we have to add anonymous access rules under the bucket configuration (readonly access)</p>
-<pre><code class="language-shell">avatars/
-public/
-</code></pre>
-<h2 id="minio-automatic-configuration-for-outline">Minio automatic configuration for outline</h2>
-<p>This role will also configure the minio service for outline, using minio client.
-Default is set to <strong>true</strong> by variable <code>minio_client_configuration</code></p>
-<h2 id="reverse-proxy-for-the-services">Reverse proxy for the services</h2>
-<p>Configuring a reverse proxy is not in the scope of this role.
-Example configuration: <a href="https://docs.getoutline.com/s/hosting/doc/nginx-6htaRboR57">https://docs.getoutline.com/s/hosting/doc/nginx-6htaRboR57</a></p>
-<p>Keep in mind that you need to configure the reverse proxy for the outline service <strong>and</strong> the s3 service as well.</p>
-<p>Example</p>
-<ul>
-<li><a href="https://outline.domain.tld">https://outline.domain.tld</a> -&gt; <a href="http://outline:3000">http://outline:3000</a></li>
-<li><a href="https://s3-outline.domain.tld">https://s3-outline.domain.tld</a> -&gt; <a href="http://outline:9000">http://outline:9000</a></li>
-<li><a href="https://s3-console-outline.domain.tld">https://s3-console-outline.domain.tld</a> -&gt; <a href="http://outline-storage:9090">http://outline-storage:9090</a></li>
-</ul>
-<h2 id="importing-and-exporting">Importing and exporting</h2>
-<ul>
-<li>In order for the exporting/importing functions to be successful, please make sure that you have connectivity between the outline application container and the s3 service (that can also be a container, running on the same host).</li>
-<li>If importing or exporting fails, make sure that there are no DNS issues (that the outline container can resolve the s3 service), no certificate trust issues etc.</li>
-<li>Exporting the wiki <strong>does not include users, groups or any permission schemes</strong>, only articles and attachments are included. Makes sense to always make backups at the OS level as well.</li>
-<li>Exporting the wiki includes only those collections that you have the permissions to read, even if you are admin.</li>
-</ul>
 
 
 
