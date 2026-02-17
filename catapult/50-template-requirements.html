@@ -2157,7 +2157,7 @@
 <h3 id="windows">Windows</h3>
 <ul>
 <li>
-<p>Latest stable OpenSSH installed and running -- Catapult does all of its work over SSH. Don't use the built-in Windows SSH server it's versions are different per OS version and you will start getting random connection errors.</p>
+<p>Latest OpenSSH installed and running -- Catapult does all of its work over SSH. Don't use the built-in Windows SSH server it's versions are different per OS version and you will start getting random connection errors.</p>
 </li>
 <li>
 <p><code>MaxAuthTries</code> set to <code>20</code> in <code>C:/ProgramData/ssh/sshd_config</code> -- A lot of users will have more than 6 keys in their SSH agent and the default <code>MaxAuthTries</code> of 6 will cause Catapult to fail to connect to the VM. The value must not be 20 but it most likely must be higher than 6.</p>
@@ -2187,11 +2187,11 @@
 <p><code>python3</code> package needs to be installed for your distribution.</p>
 </li>
 <li>
-<p><code>open-vm-tools/qemu agent/etc.</code> package might need to be installed for your distribution depending on your virtualization platform.</p>
+<p><code>open-vm-tools/qemu-guest-agent/etc.</code> package needs to be installed for your distribution depending on your virtualization platform.</p>
 </li>
 </ul>
 <h2 id="per-environmentprojectdatacenter-etc-template-requirements">Per-environment/project/datacenter etc. template requirements</h2>
-<p>We recommend applying the <a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/template_os_configuration">template_os_configuration</a> to the specific project templates. It contains some prerequisites for different <code>nova.core</code> roles that you might otherwise need to install before using those roles.</p>
+<p>We recommend applying the <a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/template_os_configuration">template_os_configuration</a> to the specific project templates. It contains some prerequisites for different <code>nova.core</code> roles that you might otherwise need to install before using those roles. If you already have a Catapult project then you can set <code>template: true</code> variable in your templates host/group_vars. Then during deploy Catapult will take a different deploy path and apply the <code>template_os_configuration</code> role and shut down the VM.</p>
 
 
 
