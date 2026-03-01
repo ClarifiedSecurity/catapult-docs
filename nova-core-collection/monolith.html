@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -1711,6 +1711,34 @@
   
   
     <li class="md-nav__item">
+      <a href="samba.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    samba
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="secrets_to_vault.html" class="md-nav__link">
         
   
@@ -2142,12 +2170,14 @@
 This role combines the following roles:</p>
 <ul>
 <li><code>nova.core.caddy</code></li>
-<li><code>nova.core.vault</code></li>
 <li><code>nova.core.keycloak</code></li>
-<li><code>nova.core.providentia</code></li>
 <li><code>nova.core.nexus</code></li>
+<li><code>nova.core.providentia</code></li>
+<li><code>nova.core.samba</code> (Optional)</li>
+<li><code>nova.core.vault</code></li>
 </ul>
 <p>It's meant for easy deployment of all required services for running a Cyber Exercise. The role generates and writes it's application default credentials into Vault. The login token for the Vault can be found at <code>/srv/vault/creds/root_token</code>.</p>
+<p>It's meant as a kickstart role for quickly setting up all required services on a single host. Those who wish to have more control over the individual services should install and configure them separately using their respective roles.</p>
 <h2 id="requirements">Requirements</h2>
 <ul>
 <li>Pre existing/installed and configured Active Directory (AD) server for LDAPs.</li>
