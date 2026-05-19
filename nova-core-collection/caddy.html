@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -2176,6 +2176,17 @@
 <li>Depends on Docker and Docker Compose being installed on the host. Docker can be installed using the <a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/caddy">nova.core.docker</a> role.</li>
 </ul>
 <h2 id="example">Example</h2>
+<pre><code class="language-yaml"># Installing Caddy server that servers static files from /srv/caddy/www directory and listens on all addresses
+- name: Installing Caddy...
+  ansible.builtin.include_role:
+    name: nova.core.caddy
+  vars:
+    caddy_servers:
+    - caddy_server_name: web.example.com # Name of the server
+        caddy_server_listen_addresses:
+        - &quot;:&quot;
+        caddy_file_server: true
+</code></pre>
 <pre><code class="language-yaml"># Installing Caddy server that listens on all addresses and reverse proxies to an internal server
 - name: Installing Caddy...
   ansible.builtin.include_role:
