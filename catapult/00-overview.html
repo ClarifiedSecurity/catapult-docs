@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://clarifiedsecurity.github.io/catapult-docs/catapult/01-installation.html">
+        <link rel="canonical" href="https://clarifiedsecurity.github.io/catapult-docs/catapult/00-overview.html">
       
       
-        <link rel="prev" href="00-overview.html">
+        <link rel="prev" href="../index.html">
       
       
-        <link rel="next" href="20-how-to-use.html">
+        <link rel="next" href="01-installation.html">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Installation - Catapult Docs</title>
+        <title>Overview - Catapult Docs</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation
+              Overview
             
           </span>
         </div>
@@ -333,34 +333,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="00-overview.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -380,7 +352,7 @@
   <span class="md-ellipsis">
     
   
-    Installation
+    Overview
   
 
     
@@ -391,14 +363,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="01-installation.html" class="md-nav__link md-nav__link--active">
+      <a href="00-overview.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Installation
+    Overview
   
 
     
@@ -424,38 +396,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quickstart" class="md-nav__link">
+  <a href="#deployment-tree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quickstart
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Quickstart">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows-subsystem-for-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows Subsystem for Linux
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caveats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Caveats
+        Deployment tree
       
     </span>
   </a>
@@ -466,6 +410,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01-installation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2125,38 +2097,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quickstart" class="md-nav__link">
+  <a href="#deployment-tree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quickstart
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Quickstart">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows-subsystem-for-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows Subsystem for Linux
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caveats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Caveats
+        Deployment tree
       
     </span>
   </a>
@@ -2183,50 +2127,82 @@
   
 
 
-<h1 id="installation">Installation</h1>
-<p>Catapult can run in <code>Linux</code>, <code>Windows (WSL)</code> or <code>MacOS</code>. For Windows follow the <a href="#windows-subsystem-for-linux">Windows Subsystem for Linux</a> section to pre-configure WSL and then return to <a href="#quickstart">Quickstart</a>.</p>
-<h2 id="quickstart">Quickstart</h2>
-<ul>
-<li>Make sure all of the SSH keypairs you need are loaded into your ssh-agent. Catapult will use them to connect to the VMs.</li>
-<li>Make sure you have <code>git</code> installed.</li>
-<li>Run the following commands to install and configure Catapult:</li>
-</ul>
-<pre><code class="language-sh">git clone https://github.com/ClarifiedSecurity/catapult &amp;&amp; \
-cd catapult &amp;&amp; \
-./install.sh
-</code></pre>
-<ul>
-<li>You can run <code>./install.sh</code> multiple times until it finishes without errors.</li>
-<li>You can also add use <code>./install.sh AUTOINSTALL</code> for unattended installation.</li>
-<li>For Linux that requires sudo password or MacOS you can use this command for unattended installation: <code>echo "YourSudoPassword" | ./install.sh AUTOINSTALL</code> Leave a space before the command to prevent it from being saved in the shell history.</li>
-</ul>
-<h3 id="windows-subsystem-for-linux">Windows Subsystem for Linux</h3>
-<p>Log in interactively (over RDP or locally) to your Windows machine with an account that is in the <strong>Administrators</strong> group and run the following commands in PowerShell. The first login needs to be with an administrative account because the WSL installation needs to be done with admin rights. After the first installation you can use a non-admin account to log in.</p>
-<pre><code class="language-powershell">Enable-WindowsOptionalFeature -FeatureName Microsoft-Windows-Subsystem-Linux -Online -NoRestart
-wsl --install
-</code></pre>
-<ul>
-<li>Restart Windows</li>
-<li>If your user account <strong>IS</strong> in the Administrators group just log in, start Ubuntu from the start menu and follow the instructions to finalize the setup.</li>
-<li>If your user account <strong>IS NOT</strong> in the Administrators group you need to run the following commands in <strong>non-admin</strong> PowerShell after your login:</li>
-</ul>
-<pre><code class="language-powershell">wsl --update
-wsl --install -d Ubuntu
-</code></pre>
-<ul>
-<li>
-<p>After that follow the instructions on screen to finalize the setup.</p>
-</li>
-<li>
-<p>Make sure all needed SSH keypairs are in <code>~/.ssh</code> folder in the WSL Ubuntu and ssh-agent is started. For easy-to-use SSH Agent you can follow this <a href="https://esc.sh/blog/ssh-agent-windows10-wsl2/">guide</a>. You can use this method to add multiple keys to the SSH Agent. <strong>If you don't have SSH agent up and running the installation script will fail</strong></p>
-</li>
-</ul>
-<p>When WSL is configured successfully then I'll show up in Windows Explorer as a network drive. You can use it to copy files between your host and the WSL system. On Windows we suggest using <a href="https://code.visualstudio.com/">VSCode</a> with the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL</a> extension to edit the files in WSL and <a href="https://learn.microsoft.com/en-us/windows/terminal/install">Windows Terminal</a> for easy connection to WSL.</p>
-<ul>
-<li>When your Ubuntu shell is ready, return to <a href="#quickstart">Quickstart</a></li>
-</ul>
-<h2 id="caveats">Caveats</h2>
-<p>If you are using a Linux VM with a user ID that is not 1000 (you can check it with the <code>id</code> command) the Catapult Docker image will be built locally during each update. This means that the updates will just take a bit longer.</p>
+<h1 id="overview">Overview</h1>
+<p>This page aims to provide a <strong>basic</strong> overview of Catapult, what it is. On a very simple level it's Ansible running in a Docker container with some extra features to make it easier to use and manage. But it's much more than that. Catapult is a tool that helps you manage your Ansible projects and environments in a way that is scalable, maintainable and reusable. Once you have installed Catapult and set up your project, you can keep coming back here to better understand how Catapult works and how to use it effectively.</p>
+<h2 id="deployment-tree">Deployment tree</h2>
+<p>Catapult (like Ansible) is host driven, meaning that you target your deployment either against a remote host or delegate it to the local machine, for an example when interacting with APIs instead of Virtual Machines. When deploying a remote host it's important to understand what steps Catapult goes through when configuring the host.</p>
+<p>The simple deployment tree is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Step #</th>
+<th>Step</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>loading variables</td>
+<td>Loading variables for the host, this includes host/group_vars, Catapult defaults, module defaults, etc. This is default Ansible behavior.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/deploy_vars">deploy_vars</a></td>
+<td>Loading custom Catapult specific defaults and running early stage tasks</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/machine_operations">machine_operations</a></td>
+<td>Creating a virtual machine</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/configure_networking">configure_networking</a></td>
+<td>Configuring the network settings for the virtual machine</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/connection">connection</a></td>
+<td>Setting correct network connection parameters to connect and configure the machine (mostly over SSH)</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/accounts">accounts</a></td>
+<td>Creating required accounts defined in the <code>admin_accounts</code>, <code>user_accounts</code> or <code>domain_user_accounts</code> variables with the project</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/os_configuration">os_configuration</a></td>
+<td>Running basic OS configurations like setting hostname, timezone, NTP settings, etc.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/customization_pre_vm_role">customization_pre_vm_role</a></td>
+<td>Including pre-VM customization role if it exists. This can be used to apply something to some group or all hosts of the project before starting the VM configuration</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/customization">customization</a></td>
+<td>Including machine specific role if it exists. Turning a blank VM into an application.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/customization_post_vm_role">customization_post_vm_role</a></td>
+<td>Including post-VM customization role if it exists. Same as <code>customization_pre_vm_role</code> but runs after the VM configuration.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/finalize">finalize</a></td>
+<td>Running finalization tasks like running tests, updates, cleanup, etc.</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/get_ip">get_ip</a></td>
+<td>Printing out the connection info of the VM</td>
+</tr>
+</tbody>
+</table>
 
 
 
