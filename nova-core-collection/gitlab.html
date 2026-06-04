@@ -2222,7 +2222,7 @@
 
 
 <h1 id="gitlab">gitlab</h1>
-<p>This role installs and configures Gitlab with Docker Compose. https://docs.gitlab.com/
+<p>This role installs and configures Gitlab with Docker Compose. <a href="https://docs.gitlab.com/">https://docs.gitlab.com/</a>
 Optionally it can also configure:</p>
 <ul>
 <li>LDAP authentication</li>
@@ -2230,9 +2230,10 @@ Optionally it can also configure:</p>
 <li>Gitlab Pages</li>
 <li>Gitlab Registry</li>
 </ul>
+<p><strong>NOTE</strong>: When upgrading major versions of Gitlab you might need to update to previous minor or patch versions first before updating to the latest version. Refer to the <a href="https://docs.gitlab.com/update/#upgrading-to-a-new-major-version">Gitlab documentation</a> and Docker container logs during the upgrade process for more information.</p>
 <h2 id="requirements">Requirements</h2>
 <ul>
-<li>Tested on Ubuntu 22.04 but should work on any Debian based system.</li>
+<li>Tested on Ubuntu LTS but should work on any Debian based system.</li>
 <li>Requires an external reverse proxy (nginx, traefik, haproxy, caddy etc.) in front of Gitlab to handle GUI access and TLS termination.</li>
 </ul>
 <h2 id="role-variables">Role Variables</h2>
@@ -2259,8 +2260,8 @@ Optionally it can also configure:</p>
     tasks_from: mnt-groups.yml
 </code></pre>
 <h2 id="useful-links">Useful links</h2>
-<p>https://www.unavco.org/gitlab/help/administration/troubleshooting/gitlab_rails_cheat_sheet.md
-https://docs.gitlab.com/ee/api/</p>
+<p><a href="https://www.unavco.org/gitlab/help/administration/troubleshooting/gitlab_rails_cheat_sheet.md">https://www.unavco.org/gitlab/help/administration/troubleshooting/gitlab_rails_cheat_sheet.md</a>
+<a href="https://docs.gitlab.com/ee/api/">https://docs.gitlab.com/ee/api/</a></p>
 
 
 
