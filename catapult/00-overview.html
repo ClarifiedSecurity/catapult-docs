@@ -398,10 +398,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deployment-tree" class="md-nav__link">
+  <a href="#simple-deployment-tree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deployment tree
+        Simple Deployment Tree
       
     </span>
   </a>
@@ -2099,10 +2099,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deployment-tree" class="md-nav__link">
+  <a href="#simple-deployment-tree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deployment tree
+        Simple Deployment Tree
       
     </span>
   </a>
@@ -2131,13 +2131,13 @@
 
 <h1 id="overview">Overview</h1>
 <p>This page aims to provide a <strong>basic</strong> overview of Catapult, what it is. On a very simple level it's Ansible running in a Docker container with some extra features to make it easier to use and manage. But it's much more than that. Catapult is a tool that helps you manage your Ansible projects and environments in a way that is scalable, maintainable and reusable. Once you have installed Catapult and set up your project, you can keep coming back here to better understand how Catapult works and how to use it effectively.</p>
-<h2 id="deployment-tree">Deployment tree</h2>
-<p>Catapult (like Ansible) is host driven, meaning that you target your deployment either against a remote host or delegate it to the local machine, for an example when interacting with APIs instead of Virtual Machines. When deploying a remote host it's important to understand what steps Catapult goes through when configuring the host.</p>
-<p>The simple deployment tree is as follows:</p>
+<h2 id="simple-deployment-tree">Simple Deployment Tree</h2>
+<p>Catapult (like Ansible) is host driven, meaning that you target your deployment either against a remote host or delegate it to the local machine (when interacting with APIs instead of VMs).</p>
+<p>When deploying a remote host it's important to understand what steps Catapult goes through when configuring the host. The simple deployment tree is as follows:</p>
 <table>
 <thead>
 <tr>
-<th>Step #</th>
+<th>#</th>
 <th>Step</th>
 <th>Description</th>
 </tr>
@@ -2169,37 +2169,37 @@
 <td>Setting correct network connection parameters to connect and configure the machine (mostly over SSH)</td>
 </tr>
 <tr>
-<td>6</td>
+<td>5</td>
 <td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/accounts">accounts</a></td>
 <td>Creating required accounts defined in the <code>admin_accounts</code>, <code>user_accounts</code> or <code>domain_user_accounts</code> variables with the project</td>
 </tr>
 <tr>
-<td>8</td>
+<td>6</td>
 <td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/os_configuration">os_configuration</a></td>
 <td>Running basic OS configurations like setting hostname, timezone, NTP settings, etc.</td>
 </tr>
 <tr>
-<td>9</td>
+<td>7</td>
 <td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/customization_pre_vm_role">customization_pre_vm_role</a></td>
 <td>Including pre-VM customization role if it exists. This can be used to apply something to some group or all hosts of the project before starting the VM configuration</td>
 </tr>
 <tr>
-<td>10</td>
+<td>8</td>
 <td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/customization">customization</a></td>
 <td>Including machine specific role if it exists. Turning a blank VM into an application.</td>
 </tr>
 <tr>
-<td>11</td>
+<td>9</td>
 <td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/customization_post_vm_role">customization_post_vm_role</a></td>
 <td>Including post-VM customization role if it exists. Same as <code>customization_pre_vm_role</code> but runs after the VM configuration.</td>
 </tr>
 <tr>
-<td>12</td>
+<td>10</td>
 <td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/finalize">finalize</a></td>
 <td>Running finalization tasks like running tests, updates, cleanup, etc.</td>
 </tr>
 <tr>
-<td>13</td>
+<td>11</td>
 <td><a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/get_ip">get_ip</a></td>
 <td>Printing out the connection info of the VM</td>
 </tr>

@@ -3485,7 +3485,7 @@
 <pre><code class="language-zsh">ctp host redeploy &lt;inventory_hostname&gt;
 </code></pre>
 <h3 id="ctp-host-deploy-until-configuration">ctp host deploy-until-configuration</h3>
-<p>Deploys the machine, stops the play after os_configuration role and creates a snapshot. This is a useful command if you want to create a snapshot of the VM after the OS is installed and configured. You can then use the snapshot to speed up the deployment/development process. You can deploy multiple machines that depend on each other in parallel and use the <code>ctp host deploy-from-configuration</code> to configure them in the correct order afterwards.</p>
+<p>Deploys the machine, stops the play after os_configuration in the <a href="https://clarifiedsecurity.github.io/catapult-docs/catapult/00-overview.html">deployment tree</a> and creates a snapshot. This is a useful command if you want to create a snapshot of the VM after the OS is installed and configured. You can then use the snapshot to speed up the deployment/development process. You can deploy multiple machines that depend on each other in parallel and use the <code>ctp host deploy-from-configuration</code> to configure them in the correct order afterwards.</p>
 <p><em>Example usage:</em></p>
 <ul>
 <li>Deploys the VM with the given inventory_hostname and creates a snapshot</li>
@@ -3493,7 +3493,7 @@
 <pre><code class="language-zsh">ctp host deploy-until-configuration &lt;inventory_hostname&gt;
 </code></pre>
 <h3 id="ctp-host-redeploy-until-configuration">ctp host redeploy-until-configuration</h3>
-<p>Redeploys the machine, stops the play after os_configuration role and creates a snapshot. This is a useful command if you want to create a snapshot of the VM after the OS is installed and configured. You can then use the snapshot to speed up the deployment/development process. You can deploy multiple machines that depend on each other in parallel and use the <code>ctp host deploy-from-configuration</code> to configure them in the correct order afterwards.</p>
+<p>Redeploys the machine, stops the play after os_configuration in the <a href="https://clarifiedsecurity.github.io/catapult-docs/catapult/00-overview.html">deployment tree</a> and creates a snapshot. This is a useful command if you want to create a snapshot of the VM after the OS is installed and configured. You can then use the snapshot to speed up the deployment/development process. You can deploy multiple machines that depend on each other in parallel and use the <code>ctp host deploy-from-configuration</code> to configure them in the correct order afterwards.</p>
 <p><em>Example usage:</em></p>
 <ul>
 <li>Redeploys the VM with the given inventory_hostname and creates a snapshot</li>
@@ -3501,7 +3501,7 @@
 <pre><code class="language-zsh">ctp host redeploy-until-configuration &lt;inventory_hostname&gt;
 </code></pre>
 <h3 id="ctp-host-deploy-from-configuration">ctp host deploy-from-configuration</h3>
-<p>Starts the play from <code>/srv/&lt;project_name&gt;/pre_vm_role part</code> of the playbook and runs until the end. This is a useful command during mass deploy when you have run the <code>ctp host deploy-until-configuration</code> first and then you want to configure the cloned machines. Should anything go wrong you can always revert to the snapshot and start again.</p>
+<p>Starts the play from <code>/srv/&lt;project_name&gt;/pre_vm_role</code> of the <a href="https://clarifiedsecurity.github.io/catapult-docs/catapult/00-overview.html">deployment tree</a> of the playbook and runs until the end. This is a useful command during mass deploy when you have run the <code>ctp host deploy-until-configuration</code> first and then you want to configure the cloned machines. Should anything go wrong you can always revert to the snapshot and start again.</p>
 <p><em>Example usage:</em></p>
 <ul>
 <li>Starts configuring the VM with the given inventory_hostname from the pre_vm_role.</li>
@@ -3509,7 +3509,7 @@
 <pre><code class="language-zsh">ctp host deploy-from-configuration &lt;inventory_hostname&gt;
 </code></pre>
 <h3 id="ctp-host-deploy-role">ctp host deploy-role</h3>
-<p>Runs only the <code>/srv/&lt;project_name&gt;/vm/&lt;role_name&gt;</code> part of the playbook and then stops. This is a useful during role developing and or when you want to minimize the time it takes to configure something.</p>
+<p>Runs only the <code>/srv/&lt;project_name&gt;/vm/&lt;role_name&gt;</code> part of the <a href="https://clarifiedsecurity.github.io/catapult-docs/catapult/00-overview.html">deployment tree</a> of the playbook and then stops. This is a useful during role developing and or when you want to minimize the time it takes to configure something.</p>
 <p><em>Example usage:</em></p>
 <ul>
 <li>Only runs the role for inventory_hostname and then stops the play can also be used against all or group_var</li>
