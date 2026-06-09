@@ -643,6 +643,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ctp-host-deploy-with-mid-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ctp host deploy-with-mid-snapshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctp-host-redeploy-with-mid-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ctp host redeploy-with-mid-snapshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ctp-host-deploy-until-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2885,6 +2907,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ctp-host-deploy-with-mid-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ctp host deploy-with-mid-snapshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctp-host-redeploy-with-mid-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ctp host redeploy-with-mid-snapshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ctp-host-deploy-until-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3334,7 +3378,7 @@
 <li>Personalization - Where users can set their own preferences that will only affect them.</li>
 <li>Customization - Where preferences are configured in a way that they apply to your team/organization etc.</li>
 </ul>
-<p>Follow the <code># How to Personalization</code> &amp; <code># How to Customize</code> sections if you want to personalize or customize Catapult.</p>
+<p>Follow the <a href="https://clarifiedsecurity.github.io/catapult-docs/catapult/30-how-to-personalize.html">How to Personalization</a> &amp; <a href="https://clarifiedsecurity.github.io/catapult-docs/catapult/40-how-to-customize.html">How to Customize</a> sections if you want to personalize or customize Catapult.</p>
 <h2 id="secrets">Secrets</h2>
 <p>When running catapult for the first time it'll ask you to create a new Ansible Vault file and fill it out with your secrets. The secrets are used to connect to the hypervisors, cloud providers, and other services. Default keys are <code>deployer_username</code> &amp; <code>deployer_password</code> these are usually your username and password for connecting <a href="https://github.com/ClarifiedSecurity/Providentia">Providentia</a> and your hypervisor. When trying to deploy to cloud environments like AWS, Azure. etc. Catapult will tell you what secrets are missing and need to be added the the Vault.</p>
 <h2 id="enter-the-catapult">Enter the Catapult</h2>
@@ -3483,6 +3527,22 @@
 <li>Redeploys the VM with the given inventory_hostname</li>
 </ul>
 <pre><code class="language-zsh">ctp host redeploy &lt;inventory_hostname&gt;
+</code></pre>
+<h3 id="ctp-host-deploy-with-mid-snapshot">ctp host deploy-with-mid-snapshot</h3>
+<p>Deploys the machine, creates a snapshot in the middle of the deployment and then continues with the deployment. You can then use the snapshot to quickly revert to the mid-deployment state instead of redeploying the machine from scratch. This is useful when you are developing the playbook and you want to quickly test the changes without having to wait for the full deployment process.</p>
+<p><em>Example usage:</em></p>
+<ul>
+<li>Deploys the VM with the given inventory_hostname and creates a mid-deployment snapshot</li>
+</ul>
+<pre><code class="language-zsh">ctp host deploy-with-mid-snapshot &lt;inventory_hostname&gt;
+</code></pre>
+<h3 id="ctp-host-redeploy-with-mid-snapshot">ctp host redeploy-with-mid-snapshot</h3>
+<p>Destroys the existing VM and runs the the <code>ctp host deploy-with-mid-snapshot</code> command. This is useful when you want to redeploy the machine and create a mid-deployment snapshot to quickly revert to the mid-deployment state instead of redeploying the machine from scratch.</p>
+<p><em>Example usage:</em></p>
+<ul>
+<li>Redeploys the VM with the given inventory_hostname and creates a mid-deployment snapshot</li>
+</ul>
+<pre><code class="language-zsh">ctp host redeploy-with-mid-snapshot &lt;inventory_hostname&gt;
 </code></pre>
 <h3 id="ctp-host-deploy-until-configuration">ctp host deploy-until-configuration</h3>
 <p>Deploys the machine, stops the play after os_configuration in the <a href="https://clarifiedsecurity.github.io/catapult-docs/catapult/00-overview.html">deployment tree</a> and creates a snapshot. This is a useful command if you want to create a snapshot of the VM after the OS is installed and configured. You can then use the snapshot to speed up the deployment/development process. You can deploy multiple machines that depend on each other in parallel and use the <code>ctp host deploy-from-configuration</code> to configure them in the correct order afterwards.</p>
