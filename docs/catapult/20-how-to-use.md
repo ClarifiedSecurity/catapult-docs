@@ -10,7 +10,7 @@ Catapult has 2 modes for modifications:
 - Personalization - Where users can set their own preferences that will only affect them.
 - Customization - Where preferences are configured in a way that they apply to your team/organization etc.
 
-Follow the `# How to Personalization` & `# How to Customize` sections if you want to personalize or customize Catapult.
+Follow the [How to Personalization](https://clarifiedsecurity.github.io/catapult-docs/catapult/30-how-to-personalize.html) & [How to Customize](https://clarifiedsecurity.github.io/catapult-docs/catapult/40-how-to-customize.html) sections if you want to personalize or customize Catapult.
 
 ## Secrets
 
@@ -222,6 +222,30 @@ _Example usage:_
 
 ```zsh
 ctp host redeploy <inventory_hostname>
+```
+
+### ctp host deploy-with-mid-snapshot
+
+Deploys the machine, creates a snapshot in the middle of the deployment and then continues with the deployment. You can then use the snapshot to quickly revert to the mid-deployment state instead of redeploying the machine from scratch. This is useful when you are developing the playbook and you want to quickly test the changes without having to wait for the full deployment process.
+
+_Example usage:_
+
+- Deploys the VM with the given inventory_hostname and creates a mid-deployment snapshot
+
+```zsh
+ctp host deploy-with-mid-snapshot <inventory_hostname>
+```
+
+### ctp host redeploy-with-mid-snapshot
+
+Destroys the existing VM and runs the the `ctp host deploy-with-mid-snapshot` command. This is useful when you want to redeploy the machine and create a mid-deployment snapshot to quickly revert to the mid-deployment state instead of redeploying the machine from scratch.
+
+_Example usage:_
+
+- Redeploys the VM with the given inventory_hostname and creates a mid-deployment snapshot
+
+```zsh
+ctp host redeploy-with-mid-snapshot <inventory_hostname>
 ```
 
 ### ctp host deploy-until-configuration
