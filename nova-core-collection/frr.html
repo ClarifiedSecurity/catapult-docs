@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/customization_single_role.html">
+        <link rel="canonical" href="https://clarifiedsecurity.github.io/catapult-docs/nova-core-collection/frr.html">
       
       
-        <link rel="prev" href="customization_pre_vm_role.html">
+        <link rel="prev" href="firewall.html">
       
       
-        <link rel="next" href="deploy_vars.html">
+        <link rel="next" href="gather_facts.html">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>customization_single_role - Catapult Docs</title>
+        <title>frr - Catapult Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#customization_single_role" class="md-skip">
+        <a href="#frr" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              customization_single_role
+              frr
             
           </span>
         </div>
@@ -1003,37 +1003,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    customization_single_role
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="customization_single_role.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="customization_single_role.html" class="md-nav__link">
         
   
   
@@ -1049,70 +1022,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#role-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Role Variables
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1262,10 +1171,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="frr.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frr
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="frr.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1281,6 +1217,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2223,17 +2223,29 @@
   
 
 
-<h1 id="customization_single_role">customization_single_role</h1>
-<p>This is a role to include and run a single Ansible role. The role name can be in the for of path/to/role or the FQCN of the role.</p>
+<h1 id="frr">frr</h1>
+<p>This role installs and configures FRR on Debian-based systems. It adds the official FRR repository, installs the FRR packages, and can be used to manage the FRR configuration.</p>
 <h2 id="requirements">Requirements</h2>
-<p>none</p>
+<p>Requires and existing <code>frr.conf</code> file to be present in the <code>templates</code> directory of the role that includes this role, or a custom path to be provided with the <code>frr_template_file</code> variable. The configuration file will be rendered with the variables provided to this role, so make sure to use the correct variable names in the template.</p>
+<p>Previous understanding of how to configure FRR is needed to use this role, as the role does not provide any default configuration and only manages the installation and configuration file rendering.</p>
 <h2 id="role-variables">Role Variables</h2>
-<p><code>single_role</code> variable is required to be set to the name of the role you want to include and run.</p>
+<p>Refer to the <a href="https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/frr/defaults/main.yml">defaults/main.yml</a> file for a list and description of the variables used in this role.</p>
 <h2 id="dependencies">Dependencies</h2>
 <p>none</p>
 <h2 id="example">Example</h2>
-<p>Include and run the <code>nova.core.updates</code> from command line by appending the cli variable to your playbook command:</p>
-<pre><code class="language-bash">ansible-playbook -i inventory playbook.yml -e single_role=nova.core.updates
+<pre><code class="language-yml"># Installing frr, enabling ospf for ipv6 and using a custom template file for the configuration
+- name: Including frr role...
+  ansible.builtin.include_role:
+    name: nova.core.frr
+  vars:
+    frr_template_file: custom_frr.conf
+    frr:
+      ospf:
+        ipv4: false
+        ipv6: true
+        priority: 254
+      bgp: false
+      pbr: false
 </code></pre>
 
 
