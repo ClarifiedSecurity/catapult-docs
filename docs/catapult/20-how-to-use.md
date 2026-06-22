@@ -226,7 +226,7 @@ ctp host redeploy <inventory_hostname>
 
 ### ctp host deploy-with-mid-snapshot
 
-Deploys the machine, creates a snapshot in the middle of the deployment and then continues with the deployment. You can then use the snapshot to quickly revert to the mid-deployment state instead of redeploying the machine from scratch. This is useful when you are developing the playbook and you want to quickly test the changes without having to wait for the full deployment process.
+Deploys the machine, creates a snapshot in the middle of the deployment and then continues with the deployment. You can then use the snapshot to quickly revert to the mid-deployment state instead of redeploying the machine from scratch. This is useful when you are developing the playbook and you want to quickly test the changes without having to wait for the full deployment process. The snapshot is created after the `os_configuration` in the [deployment tree](https://clarifiedsecurity.github.io/catapult-docs/catapult/00-overview.html) of the playbook.
 
 _Example usage:_
 
