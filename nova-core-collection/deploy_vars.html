@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2229,16 +2229,13 @@
 <p>none</p>
 <h2 id="role-variables">Role Variables</h2>
 <p>Refer to the <a href="https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/deploy_vars/defaults/main.yml">defaults/main.yml</a> file for a list and description of the variables used in this role.</p>
-<p>Pre-built variables that come from the Providentia inventory plugin if it's used. These can be useful when working with multiple projects with the same name. To avoid using incorrect information for projects, the deployer username and password can be prefixed with either <code>project</code> or <code>project</code> and <code>environment</code> to make them unique.</p>
-<p>The username and password of the deployer for a specific project in a specific environment. When both <code>project</code> and <code>environment</code> are defined in the Providentia inventory configuration.</p>
-<p><code>env_project_deployer_username</code>
-<code>env_project_deployer_password</code></p>
-<p>For the following example Providentia inventory configuration the variables in Ansible Vault can be <code>test_testing_deployer_username</code> and <code>test_testing_deployer_password</code>.</p>
+<p>Pre-built variables that come from the Providentia inventory plugin if it's used. These can be useful when working with multiple projects with the same name. To avoid using incorrect information for projects, the deployer username and password can be prefixed with either <code>environment</code> + <code>project</code>, <code>project</code> or <code>environment</code> to make them unique when multiple projects with the same name are used in different environments.</p>
+<p>For the following example Providentia inventory configuration the variables in Ansible Vault can be <code>test1_testing_deployer_username</code> and <code>test1_testing_deployer_password</code>.</p>
 <pre><code class="language-yaml">---
 plugin: nova.core.providentia_v3
 providentia_host: https://providentia.example.com
 project: testing
-environment: test
+environment: test1
 sso_token_url: https://keycloak.example.com/realms/Apps/protocol/openid-connect/token
 </code></pre>
 <p>The password of the deployer for a specific project in a specific environment. When only <code>project</code> is defined in the Providentia inventory configuration.</p>
@@ -2337,7 +2334,7 @@ sso_token_url: https://keycloak.example.com/realms/Apps/protocol/openid-connect/
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
