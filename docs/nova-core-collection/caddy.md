@@ -12,7 +12,7 @@ Refer to the [defaults/main.yml](https://github.com/ClarifiedSecurity/nova.core/
 
 ## Dependencies
 
-- Depends on Docker and Docker Compose being installed on the host. Docker can be installed using the [nova.core.docker](https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/caddy) role.
+- Depends on Docker and Docker Compose being installed on the host. Docker can be installed using the [nova.core.docker](https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/docker) role.
 
 ## Example
 
