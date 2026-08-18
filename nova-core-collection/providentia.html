@@ -894,6 +894,34 @@
   
   
     <li class="md-nav__item">
+      <a href="coredns.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coredns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="customization.html" class="md-nav__link">
         
   
@@ -2250,6 +2278,7 @@
 <h2 id="requirements">Requirements</h2>
 <ul>
 <li>Tested on Ubuntu 22.04 but should work on any Debian based system.</li>
+<li>Minimum supported Providentia version: <strong>v25.4.0</strong></li>
 </ul>
 <h2 id="role-variables">Role Variables</h2>
 <p>Refer to <a href="https://github.com/ClarifiedSecurity/nova.core/blob/main/nova/core/roles/providentia/defaults/main.yml">defaults/main.yml</a> for the full list of variables, their default values and descriptions.</p>
@@ -2257,14 +2286,20 @@
 <ul>
 <li><code>providentia_app_fqdn</code> - which DNS name will be used for the application</li>
 </ul>
-<p>If included, the keycloak will be using <code>keycloak.{{ providentia_app_fqdn }}</code> as its FQDN.</p>
+<p>If included, the SSO will be using <code>sso-{{ providentia_app_fqdn }}</code> as its default FQDN.</p>
 <h2 id="dependencies">Dependencies</h2>
 <ul>
 <li>Depends on Docker and Docker Compose being installed on the host. By default, <a href="https://github.com/ClarifiedSecurity/nova.core/tree/main/nova/core/roles/docker">nova.core.docker</a> role is included, this can be disabled by setting <code>providentia_install_docker</code> to false.</li>
-<li>Certificates for reverse proxy, if used with TLS</li>
+<li>(Optional) Certificates for reverse proxy, if used with TLS, uses self-signed certificates if not provided</li>
 </ul>
 <h2 id="notes">Notes</h2>
-<p>The builtin Keycloak is <em>not</em> secure by default: it is configured with HTTP (as Providentia does not trust self-signed certificates) by default and very weak passwords. This can and should be altered in real deployments!</p>
+<p>The builtin SSO is <em>not</em> secure by default and is meant as a placeholder for a real SSO setup</p>
+<ul>
+<li>it is configured to work with HTTP (as Providentia does not trust self-signed certificates)</li>
+<li>the accounts created are described on <a href="https://github.com/ClarifiedSecurity/Providentia#demo-credentials">main repository page</a></li>
+<li>it allows redirection to any origin</li>
+</ul>
+<p>This can and should be altered in real deployments!</p>
 <p>By default, the prebuilt image will be pulled from github - setting <code>providentia_deploy_branch</code> variable will clone the repository and build the image on host instead.</p>
 <h2 id="example">Example</h2>
 <pre><code class="language-yaml"># Installs Providentia with all components at FQDN `providentia.example.com`
@@ -2294,7 +2329,7 @@
     providentia_builtin_reverse_proxy_tls_pregenerated_cert: &quot;/srv/certs/providentia.example.com_fullchain.crt&quot;
     providentia_builtin_reverse_proxy_tls_pregenerated_key: &quot;/srv/certs/providentia.example.com_key.crt&quot;
 
-    providentia_builtin_keycloak: false
+    providentia_builtin_sso: false
     providentia_oidc_issuer: https://keycloak.example.com/realms/Providentia
     providentia_oidc_client_id: ProvidentiaLive
     providentia_oidc_client_secret: 12345
